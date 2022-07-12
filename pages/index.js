@@ -1,6 +1,8 @@
 import Head from 'next/head'
-import Image from 'next/image'
+import Footer from '../Components/Footer';
 import Header from '../Components/Header';
+import Herosection from '../Components/Sections/HeroSection';
+
 
 
 export default function Home() {
@@ -8,13 +10,14 @@ export default function Home() {
     <>
       <Head>
         <title>Create Next App</title>
-        <meta name="description" content="frontend developer" />
-        <meta name="description" content="frontend developer portfolio website" />
-        <link rel="icon" href="images/favicon.ico" />
+        <meta name="description" content="idoko emmanuel frontend developer portfolio website" />
+        <link rel="icon" href="/images/favicon.ico" />
       </Head>
 
       <main>
      <Header />
+    <Herosection />
+     <Footer />
       </main>
 
       

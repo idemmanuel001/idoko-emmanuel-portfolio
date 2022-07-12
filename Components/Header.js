@@ -1,8 +1,8 @@
 import { Link } from 'react-scroll';
-import StyledContainer from './Styles/StyledContainer';
-import Navigation from './Navigation';
+import {MobileNav, DestopNav} from './Navigation';
 import styled from 'styled-components';
 import Image from 'next/image';
+import { Container } from './styles/sharedStyles';
 
 
 const StyledHeader = styled.div`
@@ -38,7 +38,7 @@ const StyledHeader = styled.div`
 export default function Header() {
     return (
         <StyledHeader >
-             <StyledContainer>
+             <Container>
             <Link
                 to='home'
                 spy={true}
@@ -57,8 +57,9 @@ export default function Header() {
                     />
                 </div>
             </Link>
-             <Navigation />
-             </StyledContainer>
+            <MobileNav />
+            <DestopNav />
+             </Container>
         </StyledHeader >
     );
 }

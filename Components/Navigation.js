@@ -1,7 +1,8 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState } from 'react';
 import { Link, animateScroll as scroll } from "react-scroll";
 import { IoMenuSharp, IoClose } from 'react-icons/io5';
 import styled, { keyframes } from 'styled-components';
+
 
 
 //NAV LINK ITEMS
@@ -13,64 +14,22 @@ const links = [
 ];
 
 
-const fadeInAnimation = keyframes`
-    from{
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-`;
-
-//NAV BAR STYLES
-const StyledNavigaion = styled.nav`
-    font-family: 'Roboto Condensed','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    `;
-const Navigation = () => {
-
-    // Check if window is defined (so if in the browser or in node.js) to prevent webpack error when compiling.
-    const isBrowser = typeof window !== "undefined";
-    let size;
-
-    if (isBrowser) {
-        size = window.innerWidth;
-    }
-    const [screenSize, setScreenSize] = useState(size);
-
-    const handleScreenResize = useCallback(() => {
-        if (isBrowser) {
-            setScreenSize(window.innerWidth);
-        }
-
-    }, [isBrowser]);
-
-    useEffect(() => {
-
-        window.addEventListener('resize', handleScreenResize);
-        return () => window.removeEventListener('resize', handleScreenResize);
-    }, [screenSize, handleScreenResize]);
-
-    return (
-        <StyledNavigaion>
-            {screenSize > 680 ?
-                <DestopNav /> :
-                <MobileNav />}
-        </StyledNavigaion>
-    );
-};
-
-
 //DESSTOP NAV COMPONENT
 
 //Destop Nav Styles
 
 const StyledDestopNav = styled.ul`
-    display: flex;
-    align-items: center;
-    
+    display: none;
+   
+
+    @media(min-width: ${({ theme }) => theme.tablet} ){
+        display: flex;
+        align-items: center;
+    }
+
     .navLinks{
-        color: #BBCBC1;
-        font-size: 1.2rem;
+        color: ${({ theme }) => theme.primaryColor};
+        font-size: ${(theme) => theme.medium};
         font-weight: 400;
         letter-spacing: 0.5px;
         width: 100%;
@@ -78,11 +37,12 @@ const StyledDestopNav = styled.ul`
         margin: 0 0.5rem;
         padding: 0.1rem 0;
         transition: all 0.3s ease-in;
+
         &:hover{
-            color: #0BCE5A;
+            color: ${({ theme }) => theme.accentColor};
         }
         &.active{
-             border-bottom: 2px solid #0BCE5A;
+             border-bottom: 2px solid ${({ theme }) => theme.accentColor};
         }
     }
 `;
@@ -115,22 +75,13 @@ const DestopNav = () => {
 
 //Mobile Nav Styles
 
-//mobile nave panelanimation
-
-const SlideIn = keyframes`
-     from {
-    width: 0vw;
-  }
-    to {
-    width: 100vw;
+//MobileNav Togler Animation
+const fadeInAnimation = keyframes`
+    from{
+        opacity: 0;
     }
-`;
-const SlideOut = keyframes`
-     from {
-    width: 0vw;
-  }
     to {
-    width: 100vw;
+        opacity: 1;
     }
 `;
 
@@ -139,14 +90,26 @@ const SlideOut = keyframes`
 
 
 const StyledMobileNavWrapper = styled.div`
+    display: block;
+
+    @media(min-width: ${({ theme }) => theme.tablet}){
+        display: none;
+    }
+
     .navTogler{
-        color: #BBCBC1;
-        font-size: 1.8rem;
+        color: ${({ theme }) => theme.primaryColor};
+        font-size: ${({theme}) => theme.large};
         position: absolute;
         right: 1rem;
         top: 0.8rem;
         cursor: pointer;
-         animation: ${fadeInAnimation} 0.2s ease-in-out;
+        animation: ${fadeInAnimation} 0.2s ease-in-out;
+
+
+        &:hover {
+           color:  ${({ theme }) => theme.accentColor};
+
+        }
     }
 `;
 
@@ -155,16 +118,16 @@ const StyledMobileNav = styled.ul`
     position: absolute;
     right: 0;
     top: 3.45rem;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-    background: #060809;
+    background: ${({ theme }) => theme.black};
     color: #fff;
     padding: 1.5rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     transition: all 0.2s ease-in;
-    transform: ${(props) => props.isOpen ? 'translateX(0)' : 'translateX(-100vw)'};
+    transform: ${({ isOpen }) => isOpen ? 'translateX(0)' : 'translateX(-100vw)'};
     
    
     
@@ -172,21 +135,22 @@ const StyledMobileNav = styled.ul`
     .navLinks{
         padding-top: 1rem;
         padding-bottom: 0.8rem;
-        color: #BBCBC1;
-        font-size: 1.3rem;
+        color: ${({ theme }) => theme.primaryColor};
+        font-size: ${({ theme }) => theme.medium};
         font-weight: 500;
         letter-spacing: 2px;
         width: 100%;
-        border-bottom: 1px solid #C9CFD4;
+        border-bottom: 1px solid ${({ theme }) => theme.gray};
         cursor: pointer;
         transition: all 0.2s ease-in;
-        &:hover{
-           color: #0BCE5A;
-    
+
+
+        &:hover,
+        &.active {
+           color:  ${({ theme }) => theme.accentColor};
+
         }
-        &.active{
-             color: #0BCE5A;
-        } 
+    
     }
 `;
 
@@ -230,4 +194,4 @@ const MobileNav = () => {
 };
 
 
-export default Navigation;
+export { MobileNav, DestopNav };

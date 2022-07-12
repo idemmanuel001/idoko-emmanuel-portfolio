@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&family=Roboto+Condensed&display=swap');
+ 
     *{
     padding: 0px;
     margin: 0px;
@@ -16,6 +16,10 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     }
 
+    :root{
+        font-size: 1rem;
+        scroll-behavior: smooth;
+    }
 
     html{
     width: 100%;
@@ -25,9 +29,8 @@ const GlobalStyles = createGlobalStyle`
     body{
     width: 100%;
     height: 100%;
-    font-size: 1rem;
-    font-family: 'Poppins','Roboto Condensed','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: black;
+    font-family:  -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    color: ${({theme})=> theme.black};
     background-color: white;
     }
 
@@ -43,8 +46,19 @@ const GlobalStyles = createGlobalStyle`
     a {
     text-decoration: none;
     }
+
     h1{
-        font-size:1.8rem;
+        font-size: ${({theme}) => theme.largeX2};
+
+        @media(min-width: ${({ theme }) => theme.tablet}){
+            font-size: ${({theme}) => theme.largeX3};
+            margin: 0.1 0;
+        }
+
+     /*    @media(min-width: ${({ theme }) => theme.desktop}){
+            font-size: ${({theme}) => theme.largeX4};
+            margin: 0.3 0;
+         } */
     }
 
     h1,
@@ -53,34 +67,35 @@ const GlobalStyles = createGlobalStyle`
     }
 
     h2{
-    font-size: 1.6rem;
+     font-size: ${(theme) => theme.large};
 
-     @media(min-width: 680px){
-         font-size: 2rem;
-         margin: 0.8rem 0;
+     @media(${(theme)=> theme.desktop}){
+         font-size: ${(theme) => theme.large};
+         margin: 0.2 0;
      }
     }
 
     h3{
-    font-size: 1.3rem;
-    font-weight: 600;
+        font-weight: 600;
+        font-size: ${(theme) => theme.medium};
 
-     @media(min-width: 680px){
-         font-size: 1.6rem;
-     }
+        @media(${(theme) => theme.desktop}){
+            font-size: ${(theme) => theme.large};
+            margin: 0.1 0;
+        }
     }
 
     p{
-    font-size: 1.2rem;
-    font-weight: 400;
+        font-weight: 400;
+        font-size: ${(theme) => theme.medium};
 
-     @media(min-width: 680px){
-         font-size: 1.3rem;
-     }
+        @media(${(theme) => theme.tablet}){
+            font-size: ${(theme) => theme.large};
+        }
     }
 
     img{
-    width: 100%;
+        width: 100%;
     }
 
 `;
