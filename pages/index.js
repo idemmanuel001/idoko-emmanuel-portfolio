@@ -3,7 +3,7 @@ import Footer from '../Components/Footer';
 import Header from '../Components/Header';
 import AboutMe from '../Components/Sections/AboutMe';
 import Herosection from '../Components/Sections/HeroSection';
-import Projects from '../Components/Sections/Projects';
+import Projects from '../Components/Sections/Projects/Index';
 import ContactMe from '../Components/Sections/ContactMe';
 
 
