@@ -13,7 +13,7 @@ const StyledFooter = styled.footer`
     align-items: center;
     background:  ${({ theme }) => theme.black};
     color:   ${({ theme }) => theme.primaryColor};
-    z-index: 1;
+    z-index: 1; 
 
     p{
         height: 100%;

@@ -55,10 +55,10 @@ const GlobalStyles = createGlobalStyle`
             margin: 0.1 0;
         }
 
-     /*    @media(min-width: ${({ theme }) => theme.desktop}){
+        @media(min-width: ${({ theme }) => theme.desktop}){
             font-size: ${({theme}) => theme.largeX4};
             margin: 0.3 0;
-         } */
+         }
     }
 
     h1,

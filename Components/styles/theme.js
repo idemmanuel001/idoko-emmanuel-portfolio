@@ -10,7 +10,7 @@ export const theme = {
     medium: '1.3rem',
     large: '1.8rem',
     largeX2: '2.2rem',
-    largeX3: '3rem',
+    largeX3: '2.2rem',
     mobile: '320px',
     tablet: '768px',
     desktop: '990px',

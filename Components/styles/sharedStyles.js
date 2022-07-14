@@ -16,7 +16,7 @@ const Section = styled.section`
     min-height: 50vh;
 `;
 
-const Button = styled.button`
+const Button = styled.button` 
     border-radius: 10px;
     cursor: pointer;
     font-size: ${({ theme }) => theme.medium};

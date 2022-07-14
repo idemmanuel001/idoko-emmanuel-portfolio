@@ -1,11 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
-import { Container, Section, Button } from '../styles/sharedStyles';
+import { Container, Section } from '../styles/sharedStyles';
 
 
 const StyledHeroSection = styled(Section)`
-   max-height: fit-content;
+   height: fit-content;
    background: ${({ theme }) => theme.black};
    color: ${({ theme }) => theme.primaryColor};
    display: flex;
@@ -18,12 +18,14 @@ const StyledHeroSection = styled(Section)`
         justify-content: center;
         align-items: center;
         margin-top: 1rem;
+        overflow: hidden;
 
         @media(min-width: ${({ theme }) => theme.desktop}){
+            height: 60vh;
             flex-direction: row;
             justify-content: between;
             align-items: center;
-            padding-top: 3rem;
+            padding-top: 2rem;
 
         }
 
@@ -33,10 +35,17 @@ const StyledHeroSection = styled(Section)`
             align-items: center;
             justify-content: start;
 
+             @media(min-width: ${({ theme }) => theme.desktop}){
+                padding-top: 1rem;
+                justify-content: center;
+                }
+
             h1{
                 margin-bottom: 1rem;
+
                 @media(min-width: ${({ theme }) => theme.desktop}){
-                    margin-bottom: 1.6rem
+                    margin-bottom: 2rem;
+                    justify-content: flex-start;
 
                 }
 
@@ -58,7 +67,9 @@ const StyledHeroSection = styled(Section)`
                 border-radius: 10px;
                 box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
                 cursor: pointer;
+
                 
+
 
                 &:hover{
                     background: ${({ theme }) => theme.secondaryColor};
@@ -74,15 +85,14 @@ const StyledHeroSection = styled(Section)`
         }
 
 
-        #img{
+        #imgContainer{
             display: none;
 
             @media(min-width: ${({ theme }) => theme.desktop}){
-                display: flex;
-                width: 100%;
+                display: block;
+                position: relative;
                 height: 100%;
-                justify-content: center;
-                align-items: center;
+                width: 100%;
             }
     }
     }
@@ -101,14 +111,14 @@ const Herosection = () => {
                     <a href='#' >Resume</a>
                 </div>
 
-                <div id="img">
+                <div id="imgContainer">
                     <Image
                         src='/images/developer-img.svg'
                         alt="developer"
                         priority
                         layout='fill'
-                        objectFit='fill'
-                        objectPosition='50% 50%'
+                        style={{width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', bottom: '0', left: '0'}}
+        
                     />
                 </div>
             </Container>
