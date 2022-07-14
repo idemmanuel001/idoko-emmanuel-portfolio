@@ -82,7 +82,8 @@ const GlobalStyles = createGlobalStyle`
         font-size: ${({theme}) => theme.medium};
 
         @media(${({theme}) => theme.desktop}){
-            font-size: ${({theme}) => theme.large};
+            font-size: ${({theme}) => theme.medium};
+            font-weight: bold;
             margin: 0.1 0;
         }
     }

@@ -135,13 +135,12 @@ const StyledContact = styled(Section)`
         }
 
         label{
-            font-size: 1rem;
+            font-size: ${({ theme }) => theme.medium};
             font-weight: 700;
             margin-bottom: 0.2rem;
 
              @media(min-width: ${({ theme }) => theme.desktop}){
-                 font-size: 1.2rem;
-                 margin-bottom: 0.5rem;
+                margin-bottom: 0.5rem;
              }
         }
         input,
@@ -227,7 +226,7 @@ const ContactMe = () => {
                         action='/successPage'
                     >
 
-                        <input type="hidden" name="form-name" value="contact form" />
+                        <input type="hidden" name="form-name" value="portfolio contact form" />
                         <p className='formControl' >
                             <label htmlFor="name">Your Name</label>
                             <input name='name' type='text' id='name' placeholder='your name' />
