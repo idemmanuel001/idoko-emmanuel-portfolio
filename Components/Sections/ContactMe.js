@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container, Section } from '../styles/sharedStyles';
+import { Container, Section, Button } from '../styles/sharedStyles';
 
 
 //STYLES
@@ -62,15 +62,9 @@ const StyledContact = styled(Section)`
         }
         p{
             width: 100%;
-            font-size: 1rem;
             letter-spacing: 1px;
             margin-bottom: 0.5rem ;
             font-weight: 500;
-
-
-            @media(min-width: ${({ theme }) => theme.desktop}){
-                 font-size: 1.2rem;
-            }
 
         }
 
@@ -88,7 +82,7 @@ const StyledContact = styled(Section)`
             margin-top: 0.5rem;
             text-decoration: underline;
             border-bottom: none;
-            transition:all 0.3s ease;
+            transition: all 0.3s ease;
 
 
             &:hover{
@@ -97,7 +91,6 @@ const StyledContact = styled(Section)`
 
              p{
                 margin-bottom: 0;
-                font-size: 1rem;
                 display: flex;
                 align-self: baseline;
              }
@@ -175,18 +168,14 @@ const StyledContact = styled(Section)`
             height: 4rem;
         }
         button{
-            width: 100%;
+            width: 40%;
+            min-width: fit-content;
             height: 3rem;
-            border-radius: 10px;
-            background-color: #006729;
             font-size: 1.3rem;
             font-weight: bold;
-            padding: 0.5rem;
-            outline: none;
-            border: none;
-            transition: all 0.3s ease-in;
 
             &:hover{
+                width: 100%;
                 color: ${({ theme }) => theme.accentColor};
                 background: transparent;
                 border: 2px solid ${({ theme }) => theme.black};
@@ -211,7 +200,8 @@ const ContactMe = () => {
                 <div id='innerContainer'>
                     <div className="contactInfo">
                         <h2>Contact Me</h2>
-                        <p>Do you want to work with me?
+                        <p>
+                            Do you want to work with me?
                             Kindly drop a message and I would get back to you ASAP!
                         </p>
 
@@ -257,7 +247,14 @@ const ContactMe = () => {
                             </textarea>
                         </p>
                         <p className="formContrl"  >
-                            <button name='submit' type="submit">Submit</button>
+                            <Button name='submit' 
+                            type="submit"
+                                bg={({ theme }) => theme.accentColor}
+                                color={({ theme }) => theme.black}
+                                borderColor={({ theme }) => theme.accentColor}
+                                hoverColor={({ theme }) => theme.accentColor}
+                                hoverBorderColor={({ theme }) => theme.black}
+                            >Submit</Button>
                         </p>
                     </form>
                 </div>

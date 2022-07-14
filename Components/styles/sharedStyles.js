@@ -31,6 +31,7 @@ const Button = styled.button`
     &:hover{
         background: ${({ hoverBg }) => hoverBg || 'transparent'};
         color: ${({ hoverColor }) => hoverColor || 'inherit'};
+        border: 2px solid ${({ hoverBorderColor }) => hoverBorderColor || 'none'};
      }
 
 `;

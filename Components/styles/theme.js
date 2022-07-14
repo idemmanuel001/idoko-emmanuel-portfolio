@@ -8,7 +8,7 @@ export const theme = {
     white: '#ffffff',
     verySmall: '0.875rem',
     small: '1rem',
-    medium: '1.3rem',
+    medium: '1.2rem',
     large: '1.8rem',
     largeX2: '2.2rem',
     largeX3: '2.2rem',
