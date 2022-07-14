@@ -223,7 +223,8 @@ const ContactMe = () => {
                         name='contact form'
                         method='POST'
                         data-netlify='true'
-                        action='/successPage'
+                        data-netlify-recaptcha="true"
+                        action='/success'
                     >
 
                         <input type="hidden" name="form-name" value="portfolio contact form" />
@@ -245,7 +246,10 @@ const ContactMe = () => {
 
                             </textarea>
                         </p>
-                        <p className="formContrl"  >
+                        <p className='formControl' >
+                            <div data-netlify-recaptcha="true"></div>
+                        </p>
+                        <p className="formControl"  >
                             <Button name='submit' 
                             type="submit"
                                 bg={({ theme }) => theme.accentColor}
