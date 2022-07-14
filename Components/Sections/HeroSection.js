@@ -44,7 +44,7 @@ const StyledHeroSection = styled(Section)`
                 margin-bottom: 1rem;
 
                 @media(min-width: ${({ theme }) => theme.desktop}){
-                    margin-bottom: 2rem;
+                    margin-bottom: 1rem;
                     justify-content: flex-start;
 
                 }
@@ -72,7 +72,7 @@ const StyledHeroSection = styled(Section)`
 
 
                 &:hover{
-                    background: ${({ theme }) => theme.secondaryColor};
+                    background: ${({ theme }) => theme.accentColor};
                     color: ${({ theme }) => theme.primaryColor};
                     border: 2px solid ${({ theme }) => theme.black};
                 }

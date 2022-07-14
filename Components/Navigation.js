@@ -140,7 +140,7 @@ const StyledMobileNav = styled.ul`
         font-weight: 500;
         letter-spacing: 2px;
         width: 100%;
-        border-bottom: 1px solid ${({ theme }) => theme.gray};
+        border-bottom: 1px solid ${({ theme }) => theme.lightGray};
         cursor: pointer;
         transition: all 0.2s ease-in;
 

@@ -1,9 +1,10 @@
 export const theme = {
     primaryColor: '#BBCBC1',
-    secondaryColor: '#077333',
-    accentColor: '#0BCE5A',
+    secondaryColor: '#0BCE5A',
+    accentColor: '#077333',
     black: '#060809',
-    gray: '#C9CFD4',
+    lightGray: '#C9CFD4',
+    darkGray: '#535353',
     white: '#ffffff',
     verySmall: '0.875rem',
     small: '1rem',
