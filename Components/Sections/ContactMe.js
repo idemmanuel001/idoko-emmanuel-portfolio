@@ -222,8 +222,8 @@ const ContactMe = () => {
                 .required('required field'),
 
             messageSubject: Yup.string()
-                .min(3, 'must be between 3 and 30 characters long')
-                .max(30, 'must be between 3 and 30 characters long')
+                .min(3, 'must be between 3 and 60 characters long')
+                .max(60, 'must be between 3 and 60 characters long')
                 .required('required field'),
 
             message: Yup.string()
