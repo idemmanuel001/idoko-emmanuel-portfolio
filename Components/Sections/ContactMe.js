@@ -223,7 +223,6 @@ const ContactMe = () => {
                         name='contact form'
                         method='POST'
                         data-netlify='true'
-                        data-netlify-recaptcha="true"
                         action='/success'
                     >
 
@@ -245,9 +244,6 @@ const ContactMe = () => {
                             <textarea name="message" id="message" cols="30" rows="10" placeholder='please type your message here' >
 
                             </textarea>
-                        </p>
-                        <p className='formControl' >
-                            <div data-netlify-recaptcha="true"></div>
                         </p>
                         <p className="formControl"  >
                             <Button name='submit' 
