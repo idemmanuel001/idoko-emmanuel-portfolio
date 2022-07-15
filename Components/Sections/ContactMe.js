@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Container, Section, Button } from '../styles/sharedStyles';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 
 //STYLES
@@ -27,7 +29,7 @@ const StyledContact = styled(Section)`
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        border: 2px solid black;
+        border: 2px solid ${({ theme }) => theme.black};
 
         @media(min-width: ${({ theme }) => theme.desktop}){
              flex-direction: row;
@@ -120,7 +122,7 @@ const StyledContact = styled(Section)`
             border-bottom-left-radius: 0px;
         }
 
-     p{
+    p{
         width: 100%;
         min-height: 5rem;
         display: flex;
@@ -149,7 +151,7 @@ const StyledContact = styled(Section)`
             height: 2.5rem;
             color: ${({ theme }) => theme.black};
             background: ${({ theme }) => theme.primaryColor};
-            font-size: 1rem;
+            font-size: ${({ theme }) => theme.small};
             font-weight: 400;
             padding: 0.5rem 0;
             border: none;
@@ -166,11 +168,18 @@ const StyledContact = styled(Section)`
             resize: none;
             height: 4rem;
         }
+
+        .errorMessage{
+            color: ${({ theme }) => theme.red};
+            margin-bottom: 0.5rem;
+            font-size: ${({ theme }) => theme.verySmall};
+        }
+
         button{
             width: 40%;
             min-width: fit-content;
             height: 3rem;
-            font-size: 1.3rem;
+            font-size: ${({ theme }) => theme.medium};
             font-weight: bold;
 
             &:hover{
@@ -178,18 +187,70 @@ const StyledContact = styled(Section)`
                 color: ${({ theme }) => theme.accentColor};
                 background: transparent;
                 border: 2px solid ${({ theme }) => theme.black};
-
             }
-
         }
-
 
         }
 
     }
 `;
 
+//heler function to encode the form value ina way netlify would understand it
+const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+};
+
 const ContactMe = () => {
+
+    const formik = useFormik({
+        initialValues: {
+            name: '',
+            email: '',
+            messageSubject: '',
+            message: '',
+        },
+        validationSchema: Yup.object({
+            name: Yup.string()
+                .min(3, 'must be between 3 and 30 characters long')
+                .max(30, 'must be between 3 and 30 characters long')
+                .required('required field'),
+
+            email: Yup.string()
+                .email('Invalid email address')
+                .required('required field'),
+
+            messageSubject: Yup.string()
+                .min(3, 'must be between 3 and 30 characters long')
+                .max(30, 'must be between 3 and 30 characters long')
+                .required('required field'),
+
+            message: Yup.string()
+                .min(10, 'must be between 10 and 1000 characters long')
+                .max(1000, 'must be between 10 and 1000 characters long')
+                .required('required field'),
+
+        }),
+        onSubmit: (values, actions) => {
+            //Sending the data to netlify for handling
+            
+                fetch("/", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: encode({ "form-name": "Idoko Emmanuel Portfolio Contact Form", ...values })
+                })
+                    .then(() => {
+                        alert(`thanks ${values.name} for sending a message, i would get back  to you soon!`);
+                        actions.resetForm();
+                    })
+                    .catch(() => {
+                        alert('an error occured while submiting the form');
+                    })
+                    .finally(() => actions.setSubmitting(false));
+        }
+    });
+
 
 
     return (
@@ -220,34 +281,72 @@ const ContactMe = () => {
                     </div>
 
                     <form
-                        name='contact form'
-                        method='POST'
+                        name='Idoko Emmanuel Portfolio Contact Form'
                         data-netlify='true'
-                        action='/success'
+                        onSubmit={formik.handleSubmit}
                     >
 
-                        <input type="hidden" name="form-name" value="portfolio contact form" />
+                        {/*   <input type="hidden" name="form-name" value="portfolio contact form" /> */}
                         <p className='formControl' >
                             <label htmlFor="name">Your Name</label>
-                            <input name='name' type='text' id='name' placeholder='your name' />
+                            <input
+                                name='name'
+                                type='text'
+                                id='name'
+                                placeholder='your name'
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.name}
+                            />
+
+                            {formik.touched.name && formik.errors.name ? <span className='errorMessage'>{formik.errors.name}</span> : null}
                         </p>
                         <p className='formControl' >
                             <label htmlFor="email">Your Email</label>
-                            <input name='email' type='email' id='email' placeholder='please enter your email address' />
+                            <input
+                                name='email'
+                                type='email'
+                                id='email'
+                                placeholder='please enter your email address'
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.email}
+                            />
+                            {formik.touched.email && formik.errors.email ? <span className='errorMessage'>{formik.errors.email}</span> : null}
                         </p>
+
                         <p className='formControl' >
                             <label htmlFor="subject">Message Subject</label>
-                            <input name='subject' type='text' id='subject' placeholder='message subject' />
+                            <input
+                                name='messageSubject'
+                                type='text'
+                                id='subject'
+                                placeholder='message subject'
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.messageSubject}
+                            />
+                            {formik.touched.messageSubject && formik.errors.messageSubject ? <span className='errorMessage'>{formik.errors.messageSubject}</span> : null}
+
                         </p>
                         <p className='formControl' >
                             <label htmlFor="name">Message</label>
-                            <textarea name="message" id="message" cols="30" rows="10" placeholder='please type your message here' >
-
+                            <textarea
+                                name="message"
+                                id="message"
+                                cols="30" rows="10"
+                                placeholder='please type your message here'
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.message}
+                            >
                             </textarea>
+                            {formik.touched.message && formik.errors.message ? <span className='errorMessage'>{formik.errors.message}</span> : null}
+
                         </p>
                         <p className="formControl"  >
-                            <Button name='submit' 
-                            type="submit"
+                            <Button name='submit'
+                                type="submit"
                                 bg={({ theme }) => theme.accentColor}
                                 color={({ theme }) => theme.black}
                                 borderColor={({ theme }) => theme.accentColor}
