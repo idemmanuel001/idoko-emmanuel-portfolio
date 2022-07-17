@@ -66,12 +66,12 @@ const StyledProJectItem = styled.div`
     margin: 1rem auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 2px -2px 5px  ${({ theme }) => theme.darkGray};
+    box-shadow: 4px -3px 4px -1px rgb(181,181,181), -3px 3px 4px -1px rgb(181,181,181);
     background: ${({ theme }) => theme.primaryColor};
-    
     color: ${({ theme }) => theme.black};
 
     @media(min-width: ${({ theme }) => theme.tablet}){
@@ -81,53 +81,64 @@ const StyledProJectItem = styled.div`
     .projectBody{
         padding: 0.5rem 1rem 1rem 1rem;
         margin: 0 auto;
+        font-size: ${({ theme }) => theme.small};
 
         h3{
             font-weight: bold;
-            font-size: ${({ theme }) => theme.large};
+            font-size: ${({ theme }) => theme.medium};
+            margin-bottom: 0.1rem;
         }
 
         p{
             font-weight: 400;
+            font-size: ${({ theme }) => theme.small};
+        }
+
+        span{
+            font-weight: 600;
+            font-size: ${({ theme }) => theme.small};
+            text-decoration: underline;
+            margin-right: 0.3rem;
         }
 
         .stack{
-            margin: 0.5rem 0;
-
-            span{
-                font-weight: 600;
-                text-decoration: underline;
-            }
+            margin-bottom: 0.3rem;
         }
 
         .description{
 
-            span{
-                margin-left: 0.5rem;
+
+            button{
+                background: transparent !important;
+                border: none;
+                color: ${({ theme }) => theme.accentColor};
+                margin-left: 0.3rem;
                 cursor: pointer;
                 text-decoration: underline;
             }
         }
 
-        .view{
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            margin: 0.8rem 0;
-        }
-        a{
-            background: ${({ theme }) => theme.black};
-            color: ${({ theme }) => theme.white};
-            padding: 0.3rem 0.8rem;
-            margin-right: 0.8rem;
-            border-radius: 8px;
+       
+    }
+
+     .links{
             display: flex;
             justify-content: center;
+            height: fit-content;
+            width: 100%;
+            justify-content: flex-start;
             align-items: center;
-
+            background: ${({ theme }) => theme.black};
+            padding: 0.3rem 1rem;
+            
 
         }
-    }
+        a{
+            text-decoration: underline;
+            color: ${({ theme }) => theme.white};
+            margin-right: 1rem;
+
+        }
 
 
 `;
@@ -155,20 +166,24 @@ function ProjectItem({ project }) {
                 <h3> {title} </h3>
 
                 <p className='stack'>
-                    <span>Stack: </span>
+                    <span>stack: </span>
                     {stack.join(', ')}
                 </p>
 
-                <p className='description'> {isOpen ? content : description + '...'}
-                    <span onClick={() => setIsOpen(!isOpen)} >
+                <p className='description'>
+                    <span>description:</span>
+
+                    {isOpen ? content : description + '...'}
+
+                    <button onClick={() => setIsOpen(!isOpen)} >
                         {isOpen ? 'view less' : 'view more'}
-                    </span>
+                    </button>
                 </p>
 
-                <div className="view">
-                    <a href={live} className="href"> live site</a>
-                    <a href={code} className="href"> view code</a>
-                </div>
+            </div>
+            <div className="links">
+                <a href={live} className="href" target="_blank" rel="noopener noreferrer" > live site</a>
+                <a href={code} className="href" target="_blank" rel="noopener noreferrer"> view code</a>
             </div>
 
 
