@@ -17,7 +17,6 @@ const links = [
 //DESSTOP NAV COMPONENT
 
 //Destop Nav Styles
-
 const StyledDestopNav = styled.ul`
     display: none;
    
@@ -86,9 +85,6 @@ const fadeInAnimation = keyframes`
 `;
 
 
-
-
-
 const StyledMobileNavWrapper = styled.div`
     display: block;
 
@@ -140,7 +136,7 @@ const StyledMobileNav = styled.ul`
         font-weight: 500;
         letter-spacing: 2px;
         width: 100%;
-        border-bottom: 1px solid ${({ theme }) => theme.lightGray};
+        border-bottom: 1px solid ${({ theme }) => theme.primaryColor};
         cursor: pointer;
         transition: all 0.2s ease-in;
 

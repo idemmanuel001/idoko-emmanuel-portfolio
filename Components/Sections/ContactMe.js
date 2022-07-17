@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { Container, Section, Button } from '../styles/sharedStyles';
 import { useFormik } from 'formik';
@@ -234,20 +233,19 @@ const ContactMe = () => {
         }),
         onSubmit: (values, actions) => {
             //Sending the data to netlify for handling
-            
-                fetch("/", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                    body: encode({ "form-name": "Idoko Emmanuel Portfolio Contact Form", ...values })
+            fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: encode({ "form-name": "Idoko Emmanuel Portfolio Contact Form", ...values })
+            })
+                .then(() => {
+                    alert(`thanks ${values.name} for sending a message, i would get back  to you soon!`);
+                    actions.resetForm();
                 })
-                    .then(() => {
-                        alert(`thanks ${values.name} for sending a message, i would get back  to you soon!`);
-                        actions.resetForm();
-                    })
-                    .catch(() => {
-                        alert('an error occured while submiting the form');
-                    })
-                    .finally(() => actions.setSubmitting(false));
+                .catch(() => {
+                    alert('an error occured while submiting the form');
+                })
+                .finally(() => actions.setSubmitting(false));
         }
     });
 
@@ -286,7 +284,6 @@ const ContactMe = () => {
                         onSubmit={formik.handleSubmit}
                     >
 
-                        {/*   <input type="hidden" name="form-name" value="portfolio contact form" /> */}
                         <p className='formControl' >
                             <label htmlFor="name">Your Name</label>
                             <input

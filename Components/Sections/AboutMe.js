@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { Container, Section } from '../styles/sharedStyles';
 import Emoji from '../../Components/Emoji';

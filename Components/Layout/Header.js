@@ -2,7 +2,7 @@ import { Link } from 'react-scroll';
 import {MobileNav, DestopNav} from './Navigation';
 import styled from 'styled-components';
 import Image from 'next/image';
-import { Container } from './styles/sharedStyles';
+import { Container } from '../styles/sharedStyles';
 
 
 const StyledHeader = styled.div`
