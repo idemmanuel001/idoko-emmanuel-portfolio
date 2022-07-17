@@ -130,8 +130,6 @@ const StyledProJectItem = styled.div`
             align-items: center;
             background: ${({ theme }) => theme.black};
             padding: 0.8rem 1rem;
-            
-
         }
         a{
             text-decoration: underline;
