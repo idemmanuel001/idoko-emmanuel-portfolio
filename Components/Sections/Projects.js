@@ -129,7 +129,7 @@ const StyledProJectItem = styled.div`
             justify-content: flex-start;
             align-items: center;
             background: ${({ theme }) => theme.black};
-            padding: 0.3rem 1rem;
+            padding: 0.8rem 1rem;
             
 
         }
