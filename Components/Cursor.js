@@ -4,6 +4,12 @@ import styled from 'styled-components';
 
 const StyledCursor = styled.div`
     background: ${({ theme }) => theme.secondaryColor};
+    display: none; 
+
+    @media(min-width: ${({ theme }) => theme.desktop}){
+        display: block; 
+                
+    }
 
     .cursor{
         position: fixed;
@@ -60,7 +66,7 @@ const Cursor = props => {
     };
 
     useEffect(() => {
-        
+
         document.addEventListener('mousemove', updateCursor);
 
         return () => {
