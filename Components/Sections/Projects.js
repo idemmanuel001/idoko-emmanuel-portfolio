@@ -59,6 +59,8 @@ const Projects = ({ projects }) => {
 
 
 
+
+
 //ProjectItem styles
 const StyledProJectItem = styled.div`
     width: 320px;
@@ -76,6 +78,26 @@ const StyledProJectItem = styled.div`
 
     @media(min-width: ${({ theme }) => theme.tablet}){
         margin: 2rem 0;
+    }
+
+    .projectImage{
+        position: relative !important;
+
+        &::after{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: ' ';
+            background: rgba(0,0,0, 0.35);
+            transition: all 0.3s ease-in;
+
+            &:hover{
+                background: transparent;
+
+            }
+        }
     }
 
     .projectBody{
@@ -136,10 +158,17 @@ const StyledProJectItem = styled.div`
             color: ${({ theme }) => theme.white};
             margin-right: 1rem;
 
+            &:hover,
+            &:active{
+                color: ${({ theme }) => theme.accentColor};
+                transition: all 0.3s ease-in;
+            }
+
         }
 
 
 `;
+
 
 //ProjectItem Markup
 function ProjectItem({ project }) {
@@ -171,7 +200,7 @@ function ProjectItem({ project }) {
                 <p className='description'>
                     <span>description:</span>
 
-                    {isOpen ? content : description + '...'}
+                    {isOpen ? content : description +'...'}
 
                     <button onClick={() => setIsOpen(!isOpen)} >
                         {isOpen ? 'view less' : 'view more'}

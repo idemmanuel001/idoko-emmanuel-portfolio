@@ -1,13 +1,15 @@
 import Footer from './Footer';
 import Header from './Header';
+import Cursor from '../Cursor';
 
 
-export default function Layout({children}) {
+export default function Layout({ children }) {
   return (
     <main>
-        <Header />
-        {children}
-        <Footer />
+      <Cursor />
+      <Header />
+      {children}
+      <Footer />
     </main>
-  )
+  );
 }

@@ -37,7 +37,7 @@ export default function Footer() {
         <StyledFooter>
             <Container>
                 <p>
-                    Built by <span>Idoko Emmanuel</span> with Nextjs for static site generation and styled using styled-components, You&#39;re welcome to checkout the <a href="https://github.com/idemmanuel001/idoko-emmanuel-portfolio">sourcecode</a> <Emoji symbol={'😉'} arial-label='Wink' />
+                    Built by <span>Idoko Emmanuel</span> with Nextjs for static site generation and styled using styled-components, You&#39;re welcome to checkout the <a href="https://github.com/idemmanuel001/idoko-emmanuel-portfolio" target="_blank" rel="noopener noreferrer">sourcecode</a> <Emoji symbol={'😉'} arial-label='Wink' />
                 </p>
             </Container>
         </StyledFooter>
