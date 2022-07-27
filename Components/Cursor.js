@@ -58,19 +58,32 @@ const Cursor = props => {
         setPosX(e.clientX + 'px');
         setPosY(e.clientY + 'px');
 
-        console.log(posX, posY);
         cursorRef.current.style.left = posX;
         cursorRef.current.style.top = posY;
         cursorFollowerRef.current.style.left = posX;
         cursorFollowerRef.current.style.top = posY;
     };
 
-    useEffect(() => {
 
+    const showCursor = ()=>{
+        cursorRef.current.style.display = '';
+        cursorFollowerRef.current.style.display = '';
+    }
+
+    const hideCursor = ()=>{
+        cursorRef.current.style.display = 'none';
+        cursorFollowerRef.current.style.display = 'none';
+    }
+
+    useEffect(() => {
+        document.addEventListener('mouseenter', showCursor);
         document.addEventListener('mousemove', updateCursor);
+        document.addEventListener('mouseleave', hideCursor);
 
         return () => {
+            document.removeEventListener('mouseenter', showCursor);
             document.removeEventListener('mousemove', updateCursor);
+            document.removeEventListener('mouseleave', hideCursor);
         };
     });
 

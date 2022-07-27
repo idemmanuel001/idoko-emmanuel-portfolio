@@ -106,7 +106,7 @@ const Herosection = () => {
             <Container >
 
                 <div id='firstContainer'>
-                    <h1>Frontend Developer with a special interest in Shopify Development</h1>
+                    <h1>Detail-Oriented Frontend Developer focused on JamStack Developement</h1>
                     <a href='#' >Resume</a>
                 </div>
 

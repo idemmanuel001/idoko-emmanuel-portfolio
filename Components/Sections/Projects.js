@@ -155,7 +155,7 @@ const StyledProJectItem = styled.div`
         }
         a{
             text-decoration: underline;
-            color: ${({ theme }) => theme.white};
+            color: ${({ theme }) => theme.primaryColor};
             margin-right: 1rem;
 
             &:hover,
