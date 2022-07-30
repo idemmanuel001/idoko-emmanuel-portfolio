@@ -61,10 +61,10 @@ const DestopNav = () => {
     const destopnavRef = useRef(null);
 
     useLayoutEffect(() => {
-        const timeline = gsap.timeline()
-        timeline.to(destopnavRef.current.children, { opacity: 1, x: 0, y: 0, duration: 2, ease: 'power4.inOut', stagger: 0.15  });
-       
-        return ()=> timeline.kill()
+        const timeline = gsap.timeline();
+        timeline.to(destopnavRef.current.children, { opacity: 1, x: 0, y: 0, duration: 2, ease: 'power4.inOut', stagger: 0.15 });
+
+        return () => timeline.kill();
     }, []);
 
     return (
@@ -98,15 +98,6 @@ const DestopNav = () => {
 
 //Mobile Nav Styles
 
-//MobileNav Togler Animation
-const fadeInAnimation = keyframes`
-    from{
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-`;
 
 
 const StyledMobileNavWrapper = styled.div`
@@ -123,7 +114,9 @@ const StyledMobileNavWrapper = styled.div`
         right: 1rem;
         top: 0.8rem;
         cursor: pointer;
-        animation: ${fadeInAnimation} 0.2s ease-in-out;
+        opacity: 0;
+        transform: translate(100vw, -100vh);
+        
 
 
         &:hover {
@@ -177,16 +170,27 @@ const StyledMobileNav = styled.ul`
 //MobileNAv Markup
 const MobileNav = () => {
     const [isOpen, setIopen] = useState(false);
+    const mobilenavRef = useRef(null);
+
+    useLayoutEffect(() => {
+        const timeline = gsap.timeline();
+        timeline.to(mobilenavRef.current, { opacity: 1, x: 0, y: 0, duration: 2, ease: 'power4.inOut', stagger: 0.15 });
+        console.log(mobilenavRef.current);
+
+        return () => timeline.kill();
+    }, []);
 
     return (
         <StyledMobileNavWrapper >
-            {isOpen ?
-                <IoClose
-                    className='navTogler'
-                    onClick={() => setIopen(!isOpen)} /> :
-                <IoMenuSharp
-                    className='navTogler'
-                    onClick={() => setIopen(!isOpen)} />}
+            <div
+                ref={mobilenavRef}
+                className="navTogler">
+                {isOpen ?
+                    <IoClose
+                        onClick={() => setIopen(!isOpen)} /> :
+                    <IoMenuSharp
+                        onClick={() => setIopen(!isOpen)} />}
+            </div>
 
             (<StyledMobileNav
                 isOpen={isOpen}>
