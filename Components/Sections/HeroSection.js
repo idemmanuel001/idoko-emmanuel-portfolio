@@ -1,23 +1,30 @@
+import { useRef, useLayoutEffect } from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
 import { Container, Section } from '../styles/sharedStyles';
+import { gsap } from 'gsap';
 
 
 const StyledHeroSection = styled(Section)`
-   height: fit-content;
-   background: ${({ theme }) => theme.black};
-   color: ${({ theme }) => theme.primaryColor};
-   display: flex;
-   align-items: center;
+    height: fit-content;
+    overflow: hidden;
+    background: ${({ theme }) => theme.black};
+    color: ${({ theme }) => theme.primaryColor};
+    display: flex;
+    align-items: center;
 
 
-    div{
+    .innerContainer{
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         margin-top: 1rem;
-        overflow: hidden;
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+        opacity: 0;
+        transform: translateY(100px);
+
 
         @media(min-width: ${({ theme }) => theme.desktop}){
             height: 60vh;
@@ -25,6 +32,7 @@ const StyledHeroSection = styled(Section)`
             justify-content: between;
             align-items: center;
             padding-top: 2rem;
+            overflow: hidden;
 
         }
 
@@ -34,9 +42,12 @@ const StyledHeroSection = styled(Section)`
             align-items: center;
             justify-content: start;
 
+
              @media(min-width: ${({ theme }) => theme.desktop}){
                 padding-top: 1rem;
                 justify-content: center;
+                overflow: hidden;
+
                 }
 
             h1{
@@ -44,6 +55,7 @@ const StyledHeroSection = styled(Section)`
 
                 @media(min-width: ${({ theme }) => theme.desktop}){
                     margin-bottom: 1rem;
+                    margin-right: 0.3rem;
                     justify-content: flex-start;
 
                 }
@@ -89,9 +101,11 @@ const StyledHeroSection = styled(Section)`
 
             @media(min-width: ${({ theme }) => theme.desktop}){
                 display: block;
+                overflow: hidden;
                 position: relative;
                 height: 100%;
                 width: 100%;
+              
             }
     }
     }
@@ -101,24 +115,35 @@ const StyledHeroSection = styled(Section)`
 
 //MARKUP
 const Herosection = () => {
+    const heroRef = useRef(null);
+
+    useLayoutEffect(() => {
+        gsap.to(heroRef.current, { clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)', opacity: 1, y: 0, duration: 2.5, ease: 'power4.inOut' });
+    }, []);
+
+
     return (
         <StyledHeroSection id='home'>
-            <Container >
+            <Container>
 
-                <div id='firstContainer'>
-                    <h1>Detail-Oriented Frontend Developer focused on JamStack Developement</h1>
-                    <a href='#' >Resume</a>
-                </div>
+                <div
+                    ref={heroRef}
+                    className="innerContainer">
+                    <div id='firstContainer'>
+                        <h1>Detail-Oriented Frontend Developer focused on JamStack Developement</h1>
+                        <a href='#' >Resume</a>
+                    </div>
 
-                <div id="imgContainer">
-                    <Image
-                        src='/images/developer-img.svg'
-                        alt="developer"
-                        priority
-                        layout='fill'
-                        style={{width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', bottom: '0', left: '0'}}
-        
-                    />
+                    <div id="imgContainer">
+                        <Image
+                            src='/images/developer-img.svg'
+                            alt="developer"
+                            priority
+                            layout='fill'
+                            style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', bottom: '0', left: '0' }}
+
+                        />
+                    </div>
                 </div>
             </Container>
         </StyledHeroSection>

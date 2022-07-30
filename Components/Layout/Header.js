@@ -1,5 +1,7 @@
+import { useRef, useLayoutEffect } from 'react';
+import { gsap } from 'gsap';
 import { Link } from 'react-scroll';
-import {MobileNav, DestopNav} from './Navigation';
+import { MobileNav, DestopNav } from './Navigation';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { Container } from '../styles/sharedStyles';
@@ -27,39 +29,52 @@ const StyledHeader = styled.div`
         
    .logo{
         cursor: pointer;
-       width: fit-content;
-       display: flex;
-       justify-content: center;
-       align-items: center;
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transform: translate(-100vw, -100vh);
    }
     }
 `;
 
 export default function Header() {
+    const logoRef = useRef(null);
+
+    useLayoutEffect(() => {
+        const timeline = gsap.timeline();
+        timeline.to(logoRef.current, { opacity: 1, x: 0, y: 0, duration: 2, ease: 'power4.inOut' });
+        console.log(logoRef.current)
+
+        return () => timeline.kill();
+    }, []);
+
     return (
         <StyledHeader >
-             <Container>
-            <Link
-                to='home'
-                spy={true}
-                smooth={true}
-                offset={-90}
-                duration={500}
-                className="logo" >
+            <Container>
+                <Link
+                    to='home'
+                    spy={true}
+                    smooth={true}
+                    offset={-90}
+                    duration={500} >
 
-                <div className="logo">
-                    <Image
-                        src='/images/logo.svg'
-                        alt='logo'
-                        width='50'
-                        height='50'
-                        priority='true'
-                    />
-                </div>
-            </Link>
-            <MobileNav />
-            <DestopNav />
-             </Container>
+                    <div
+                        ref={logoRef}
+                        className="logo">
+                        <Image
+                            src='/images/logo.svg'
+                            alt='logo'
+                            width='50'
+                            height='50'
+                            priority='true'
+                        />
+                    </div>
+                </Link>
+                <MobileNav />
+                <DestopNav />
+            </Container>
         </StyledHeader >
     );
 }

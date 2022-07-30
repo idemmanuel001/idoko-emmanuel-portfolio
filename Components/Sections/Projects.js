@@ -9,6 +9,7 @@ const StyledProject = styled(Section)`
     color:  ${({ theme }) => theme.primaryColor};
     background:  ${({ theme }) => theme.black};
 
+
     .outerContainer{
         width: 100%;
         color: inherit;
@@ -77,25 +78,27 @@ const StyledProJectItem = styled.div`
     color: ${({ theme }) => theme.black};
 
     @media(min-width: ${({ theme }) => theme.tablet}){
-        margin: 2rem 0;
+        margin: 1rem 0;
     }
 
     .projectImage{
-        position: relative !important;
+        position: relative;
 
-        &::after{
+        .overlay{
+            width: 100%;
+            height: 100%;
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            content: ' ';
             background: rgba(0,0,0, 0.35);
-            transition: all 0.3s ease-in;
+            transition: all 0.5s ease-in;
 
+            &:focus,
             &:hover{
-                background: transparent;
-
+                transform: scale(0.05, 0.05);
+                opacity: 0;
             }
         }
     }
@@ -186,6 +189,7 @@ function ProjectItem({ project }) {
                     width='320'
                     height='180'
                     objectFit='fill' />
+                    <div className='overlay'></div>
             </div>
 
             <div className="projectBody">

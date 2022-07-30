@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useLayoutEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 import { Link, animateScroll as scroll } from "react-scroll";
 import { IoMenuSharp, IoClose } from 'react-icons/io5';
 import styled, { keyframes } from 'styled-components';
@@ -20,10 +21,18 @@ const links = [
 const StyledDestopNav = styled.ul`
     display: none;
    
+    .innerContainer{
+
+        @media(min-width: ${({ theme }) => theme.tablet} ){
+            display: flex;
+            align-items: center;
+           
+            
+        }
+    }
 
     @media(min-width: ${({ theme }) => theme.tablet} ){
-        display: flex;
-        align-items: center;
+        display: block;
     }
 
     .navLinks{
@@ -35,7 +44,10 @@ const StyledDestopNav = styled.ul`
         cursor: pointer;
         margin: 0 0.5rem;
         padding: 0.1rem 0;
-        transition: all 0.3s ease-in;
+        opacity: 0;
+        transform: translate(100vw, -100vh);
+       
+        
 
         &:hover{
             color: ${({ theme }) => theme.accentColor};
@@ -46,25 +58,37 @@ const StyledDestopNav = styled.ul`
     }
 `;
 const DestopNav = () => {
+    const destopnavRef = useRef(null);
+
+    useLayoutEffect(() => {
+        const timeline = gsap.timeline()
+        timeline.to(destopnavRef.current.children, { opacity: 1, x: 0, y: 0, duration: 2, ease: 'power4.inOut', stagger: 0.15  });
+       
+        return ()=> timeline.kill()
+    }, []);
 
     return (
         <StyledDestopNav>
-            {links.map(link => {
-                return (
-                    <Link
-                        activeClass="active"
-                        to={link.to}
-                        spy={true}
-                        smooth={true}
-                        offset={-70}
-                        duration={500}
-                        key={link.name}
-                        className='navLinks'
-                    >
-                        {link.name}
-                    </Link>
-                );
-            })}
+            <div
+                ref={destopnavRef}
+                className="innerContainer">
+                {links.map(link => {
+                    return (
+                        <Link
+                            activeClass="active"
+                            to={link.to}
+                            spy={true}
+                            smooth={true}
+                            offset={-70}
+                            duration={500}
+                            key={link.name}
+                            className='navLinks'
+                        >
+                            {link.name}
+                        </Link>
+                    );
+                })}
+            </div>
         </StyledDestopNav>
     );
 };
@@ -94,7 +118,7 @@ const StyledMobileNavWrapper = styled.div`
 
     .navTogler{
         color: ${({ theme }) => theme.primaryColor};
-        font-size: ${({theme}) => theme.large};
+        font-size: ${({ theme }) => theme.large};
         position: absolute;
         right: 1rem;
         top: 0.8rem;

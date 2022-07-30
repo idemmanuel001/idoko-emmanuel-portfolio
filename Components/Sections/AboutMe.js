@@ -9,6 +9,7 @@ const StyledAbout = styled(Section)`
     background: ${({ theme }) => theme.primaryColor};
     color: ${({ theme }) => theme.black};
 
+
     h2{
         margin-bottom: 1rem;
 
