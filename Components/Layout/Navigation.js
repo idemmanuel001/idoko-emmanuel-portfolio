@@ -115,7 +115,7 @@ const StyledMobileNavWrapper = styled.div`
         top: 0.8rem;
         cursor: pointer;
         opacity: 0;
-        transform: translate(100vw, -100vh);
+        transform: translateY(-100vh);
         
 
 
@@ -174,8 +174,7 @@ const MobileNav = () => {
 
     useLayoutEffect(() => {
         const timeline = gsap.timeline();
-        timeline.to(mobilenavRef.current, { opacity: 1, x: 0, y: 0, duration: 2, ease: 'power4.inOut', stagger: 0.15 });
-        console.log(mobilenavRef.current);
+        timeline.to(mobilenavRef.current, { opacity: 1, y: 0, duration: 2, ease: 'power4.inOut' });
 
         return () => timeline.kill();
     }, []);

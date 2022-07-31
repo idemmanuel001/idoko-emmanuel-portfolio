@@ -34,7 +34,12 @@ const StyledHeader = styled.div`
         justify-content: center;
         align-items: center;
         opacity: 0;
-        transform: translate(-100vw, -100vh);
+        transform: translate(-100vh);
+
+            @media(min-width: ${({ theme }) => theme.desktop}){
+                transform: translate(-100vw, -100vh);
+
+            }
    }
     }
 `;
