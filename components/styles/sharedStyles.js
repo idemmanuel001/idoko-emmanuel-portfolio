@@ -19,24 +19,25 @@ const Section = styled.section`
     width: 100%;
     min-height: 50vh;
 `;
-
+ 
 const Button = styled.button` 
     border-radius: 10px;
     cursor: pointer;
     font-size: ${({ theme }) => theme.medium};
-    font-weight: 600;
+    font-weight: 400;
     padding: 0.5rem ;
     transition: all 0.3s ease-in;
     background: ${({ bg }) => bg || 'transparent'};
-    color: ${({ color }) => color || 'inherit'};
+    color: ${({ color, theme }) => color || theme.primaryColor};
     outline: none;
-    border: 2px solid ${({ borderColor }) => borderColor || 'none'};
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    border: 1px solid ${({ borderColor, theme }) => borderColor || theme.primaryColor};
+   
 
     &:hover{
-        background: ${({ hoverBg }) => hoverBg || 'transparent'};
-        color: ${({ hoverColor }) => hoverColor || 'inherit'};
-        border: 2px solid ${({ hoverBorderColor }) => hoverBorderColor || 'none'};
+        color: ${({ theme }) => theme.lightGray};
+     }
+    &:active{
+        color: ${({ theme }) => theme.lightGray};
      }
 
 `;

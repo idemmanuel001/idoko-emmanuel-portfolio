@@ -3,6 +3,8 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import { Container, Section } from '../styles/sharedStyles';
 import { gsap } from 'gsap';
+import { Link, animateScroll as scroll } from "react-scroll";
+
 
 
 const StyledHeroSection = styled(Section)`
@@ -70,19 +72,13 @@ const StyledHeroSection = styled(Section)`
                 font-weight: bold;
                 text-align: center;
                 padding: 0.5rem ;
-                background: transparent;
-                color: ${({ theme }) => theme.primaryColor};
+                
                 transition: all 0.3s ease-in;
                 outline: none;
                 border: 2px solid ${({ theme }) => theme.primaryColor};
                 border-radius: 10px;
                 box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
                 cursor: pointer;
-
-        
-                &:hover{
-                    color: ${({ theme }) => theme.lightGray};
-                }
 
                 @media(min-width: ${({ theme }) => theme.desktop}){
                     width: 14rem;
@@ -127,7 +123,15 @@ const Herosection = () => {
                     className="innerContainer">
                     <div id='firstContainer'>
                         <h1>Detail-Oriented Frontend Developer focused on JamStack Developement</h1>
-                        <a href='#' >My Resume</a>
+                        <Link
+                        activeClass="active"
+                            to='contact'
+                            spy={true}
+                            smooth={true}
+                            offset={-70}
+                            duration={500} >
+                                Hire Me
+                            </Link>
                     </div>
 
                     <div id="imgContainer">

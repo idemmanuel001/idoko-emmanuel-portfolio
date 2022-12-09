@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { Link, animateScroll as scroll } from "react-scroll";
 import { IoMenuSharp, IoClose } from 'react-icons/io5';
 import styled, { keyframes } from 'styled-components';
+import { Button } from '../styles/sharedStyles';
 
 
 
@@ -36,7 +37,7 @@ const StyledDestopNav = styled.ul`
     }
 
     .navLinks{
-        color: ${({ theme }) => theme.primaryColor};
+        color: ${({ theme }) => theme.white};
         font-size: ${(theme) => theme.medium};
         font-weight: 400;
         letter-spacing: 0.5px;
@@ -53,7 +54,8 @@ const StyledDestopNav = styled.ul`
             color: ${({ theme }) => theme.darkGray};
         }
         &.active{
-             border-bottom: 2px solid ${({ theme }) => theme.darkGray};
+            color: ${({ theme }) => theme.primaryColor};
+            border-bottom: 2px solid ${({ theme }) => theme.primaryColor};
         }
     }
 `;
@@ -88,6 +90,8 @@ const DestopNav = () => {
                         </Link>
                     );
                 })}
+
+                <Button>Resume</Button>
             </div>
         </StyledDestopNav>
     );
@@ -97,7 +101,6 @@ const DestopNav = () => {
 //MOBILE NAV COMPONENT
 
 //Mobile Nav Styles
-
 
 
 const StyledMobileNavWrapper = styled.div`
@@ -120,7 +123,7 @@ const StyledMobileNavWrapper = styled.div`
 
 
         &:hover {
-           color:  ${({ theme }) => theme.accentColor};
+           color:  ${({ theme }) => theme.darkGray};
 
         }
     }
@@ -134,7 +137,6 @@ const StyledMobileNav = styled.ul`
     width: 100vw;
     height: 100vh;
     background: ${({ theme }) => theme.secondaryColor};
-    color: #fff;
     padding: 1.5rem 1rem;
     display: flex;
     flex-direction: column;
@@ -148,22 +150,29 @@ const StyledMobileNav = styled.ul`
     .navLinks{
         padding-top: 1rem;
         padding-bottom: 0.8rem;
-        color: ${({ theme }) => theme.primaryColor};
+        color: ${({ theme }) => theme.lightGray};
         font-size: ${({ theme }) => theme.medium};
         font-weight: 500;
         letter-spacing: 2px;
         width: 100%;
-        border-bottom: 1px solid ${({ theme }) => theme.primaryColor};
+        border-bottom: 1px solid ${({ theme }) => theme.lightGray};
         cursor: pointer;
         transition: all 0.2s ease-in;
 
 
-        &:hover,
+        &:hover{
+            color:  ${({ theme }) => theme.darkGray};
+        }
         &.active {
-           color:  ${({ theme }) => theme.accentColor};
+           color:  ${({ theme }) => theme.primaryColor};
 
         }
     
+    }
+
+    button {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
 `;
 
@@ -211,6 +220,7 @@ const MobileNav = () => {
                         </Link>
                     );
                 })}
+                <Button>Resume</Button>
             </StyledMobileNav>)
         </StyledMobileNavWrapper>
     );
