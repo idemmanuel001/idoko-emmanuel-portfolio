@@ -1,9 +1,12 @@
 export const theme = {
-    primaryColor: '#BBCBC1',
+    //primaryColor: '#BBCBC1',
+    primaryColor: '#00DAF4',
     secondaryColor: '#0BCE5A',
     accentColor: '#077333',
     black: '#060809',
-    darkGray: '#535353',
+    //darkGray: '#535353',
+    lightGray: '#C0C1DE',
+    darkGray: '#6C7184',
     white: '#ffffff',
     red: '#cf111d',
     verySmall: '0.875rem',
@@ -17,4 +20,5 @@ export const theme = {
     desktop: '990px',
     maxWidth: '1200px'
 };
+
 
