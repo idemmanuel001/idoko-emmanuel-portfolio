@@ -1,7 +1,7 @@
 import { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { Link } from 'react-scroll';
-import { MobileNav, DestopNav } from './navigation1';
+import { MobileNav, DestopNav } from './navigation';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { Container } from '../styles/sharedStyles';

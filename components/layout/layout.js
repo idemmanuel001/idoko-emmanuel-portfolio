@@ -1,6 +1,6 @@
-import Footer from './Footer';
-import Header from './Header';
-import Cursor from '../Cursor';
+import Footer from './footer';
+import Header from './header';
+import Cursor from '../cursor';
 
 
 export default function Layout({ children }) {
