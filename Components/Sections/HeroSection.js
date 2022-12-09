@@ -136,7 +136,7 @@ const Herosection = () => {
 
                     <div id="imgContainer">
                         <Image
-                            src='/images/developer-img.svg'
+                            src='/images/dev-illustration.svg'
                             alt="developer"
                             priority
                             layout='fill'
