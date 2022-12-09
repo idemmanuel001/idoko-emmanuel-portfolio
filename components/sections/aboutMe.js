@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Container, Section } from '../styles/sharedStyles';
-import Emoji from '../emoji1';
+import Emoji from '../emoji';
 
 
 
