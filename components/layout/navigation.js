@@ -50,10 +50,10 @@ const StyledDestopNav = styled.ul`
         
 
         &:hover{
-            color: ${({ theme }) => theme.accentColor};
+            color: ${({ theme }) => theme.darkGray};
         }
         &.active{
-             border-bottom: 2px solid ${({ theme }) => theme.accentColor};
+             border-bottom: 2px solid ${({ theme }) => theme.darkGray};
         }
     }
 `;
@@ -133,7 +133,7 @@ const StyledMobileNav = styled.ul`
     top: 3.45rem;
     width: 100vw;
     height: 100vh;
-    background: ${({ theme }) => theme.black};
+    background: ${({ theme }) => theme.secondaryColor};
     color: #fff;
     padding: 1.5rem 1rem;
     display: flex;

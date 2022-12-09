@@ -1,7 +1,7 @@
 import { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { Link } from 'react-scroll';
-import { MobileNav, DestopNav } from './Navigation';
+import { MobileNav, DestopNav } from './navigation1';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { Container } from '../styles/sharedStyles';
@@ -9,7 +9,9 @@ import { Container } from '../styles/sharedStyles';
 
 const StyledHeader = styled.div`
      width: 100%;
-     background: #060809;
+   //  background: #060809;
+    background: ${({ theme }) => theme. secondaryColor};
+
      position: sticky;
      top: 0;
      z-index: 100;
@@ -50,8 +52,6 @@ export default function Header() {
     useLayoutEffect(() => {
         const timeline = gsap.timeline();
         timeline.to(logoRef.current, { opacity: 1, x: 0, y: 0, duration: 2, ease: 'power4.inOut' });
-        console.log(logoRef.current)
-
         return () => timeline.kill();
     }, []);
 
