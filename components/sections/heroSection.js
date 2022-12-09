@@ -8,8 +8,8 @@ import { gsap } from 'gsap';
 const StyledHeroSection = styled(Section)`
     height: fit-content;
     overflow: hidden;
-    background: ${({ theme }) => theme.black};
-    color: ${({ theme }) => theme.primaryColor};
+    background: ${({ theme }) => theme. secondaryColor};
+    color: ${({ theme }) => theme.lightGray};
     display: flex;
     align-items: center;
 
@@ -71,21 +71,17 @@ const StyledHeroSection = styled(Section)`
                 text-align: center;
                 padding: 0.5rem ;
                 background: transparent;
-                color: ${({ theme }) => theme.secondaryColor};
+                color: ${({ theme }) => theme.primaryColor};
                 transition: all 0.3s ease-in;
                 outline: none;
-                border: 2px solid ${({ theme }) => theme.secondaryColor};
+                border: 2px solid ${({ theme }) => theme.primaryColor};
                 border-radius: 10px;
                 box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
                 cursor: pointer;
 
-                
-
-
+        
                 &:hover{
-                    background: ${({ theme }) => theme.accentColor};
-                    color: ${({ theme }) => theme.primaryColor};
-                    border: 2px solid ${({ theme }) => theme.black};
+                    color: ${({ theme }) => theme.lightGray};
                 }
 
                 @media(min-width: ${({ theme }) => theme.desktop}){
@@ -131,7 +127,7 @@ const Herosection = () => {
                     className="innerContainer">
                     <div id='firstContainer'>
                         <h1>Detail-Oriented Frontend Developer focused on JamStack Developement</h1>
-                        <a href='#' >Resume</a>
+                        <a href='#' >My Resume</a>
                     </div>
 
                     <div id="imgContainer">

@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { Container, Section } from '../styles/sharedStyles';
-import Emoji from '../../Components/Emoji';
+import Emoji from '../emoji1';
 
 
 
 
 const StyledAbout = styled(Section)`
-    background: ${({ theme }) => theme.primaryColor};
+    background: ${({ theme }) => theme.white};
     color: ${({ theme }) => theme.black};
 
 
@@ -19,14 +19,14 @@ const StyledAbout = styled(Section)`
         }
     }
     h3{
-        color: ${({ theme }) => theme.accentColor};
+        color: ${({ theme }) => theme.primaryColor};
     }
     p{
         margin-bottom: 0.5rem;
         text-align: left;
 
         span{
-            color:  ${({ theme }) => theme.accentColor};
+            color:  ${({ theme }) => theme.primaryColor};
             font-weight: 500;
         }
     }
@@ -52,9 +52,11 @@ const AboutMe = () => {
                         </p>
 
 
-                        <p id='skills'>
+                        <div id='skills'>
                             My Technical Skills includes: <span>html, css, sass, tailwindcss, javascript, styled-components, react, nextjs, graphql, git/github, shopify, etc. </span>
-                        </p>
+                       
+                            
+                        </div>
 
                     </div>
 
