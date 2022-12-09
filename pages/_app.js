@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import GlobalStyles from '../Components/styles/globalStyles';
+import GlobalStyles from '../components/styles/globalStyles';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../Components/styles/theme.js';
-import Layout from '../Components/Layout/Layout';
+import { theme } from '../components/styles/theme.js';
+import Layout from '../components/layout/layout';
 
 
 
