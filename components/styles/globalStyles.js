@@ -67,19 +67,13 @@ const GlobalStyles = createGlobalStyle`
     }
 
     h2{
-        font-size: ${({theme}) => theme.large};
+        font-size: ${({theme}) => theme.largeX2};
         margin-bottom: 1rem;
-     
-
-        @media(${({theme})=> theme.desktop}){
-         font-size: ${({theme}) => theme.large};
-         margin-bottom: 1rem;
-     }
     }
 
     h3{
         font-weight: 600;
-        font-size: ${({theme}) => theme.medium};
+        font-size: ${({theme}) => theme.large};
 
         @media(${({theme}) => theme.desktop}){
             font-size: ${({theme}) => theme.medium};

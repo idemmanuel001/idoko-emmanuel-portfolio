@@ -5,11 +5,11 @@ const Container = styled.div`
     width: 100%;
     max-width: 1100px;  
     margin: 0 auto;
-    padding: 2rem 1.2rem ;
+    padding: 4rem 1.2rem ;
     overflow: hidden;
 
     @media(min-width: ${({ theme }) => theme.desktop}){
-        padding: 3rem 1.2rem ;
+        padding: 6em 1.2rem ;
                
     }
 `;

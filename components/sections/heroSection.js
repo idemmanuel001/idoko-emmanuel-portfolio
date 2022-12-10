@@ -54,6 +54,9 @@ const StyledHeroSection = styled(Section)`
 
             h1{
                 margin-bottom: 1rem;
+                span{
+                    color: ${({ theme }) => theme.primaryColor};
+                }
 
                 @media(min-width: ${({ theme }) => theme.desktop}){
                     margin-bottom: 1rem;
@@ -72,7 +75,6 @@ const StyledHeroSection = styled(Section)`
                 font-weight: bold;
                 text-align: center;
                 padding: 0.5rem ;
-                
                 transition: all 0.3s ease-in;
                 outline: none;
                 border: 2px solid ${({ theme }) => theme.primaryColor};
@@ -122,7 +124,7 @@ const Herosection = () => {
                     ref={heroRef}
                     className="innerContainer">
                     <div id='firstContainer'>
-                        <h1>Detail-Oriented Frontend Developer focused on JamStack Developement</h1>
+                        <h1>Detail-Oriented <span>Frontend Developer </span> focused on timely value delivery</h1>
                         <Link
                         activeClass="active"
                             to='contact'
