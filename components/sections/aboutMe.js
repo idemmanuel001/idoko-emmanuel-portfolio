@@ -22,7 +22,19 @@ const StyledAbout = styled(Section)`
     }
 
     .background{
-        
+        h3{
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p{
+            margin-bottom: 0.5rem;
+            text-align: left;
+            font-weight: 600;
+            line-height: 1.6;
+
+        }
+
     }
 
     .title{
@@ -31,9 +43,10 @@ const StyledAbout = styled(Section)`
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
 
         h2{
-            margin-bottom: 1rem;
             z-index: 10;
 
             @media(min-width: ${({ theme }) => theme.desktop}){
@@ -64,21 +77,7 @@ const StyledAbout = styled(Section)`
                 opacity: 0.5;
             }
         }
-
-
-    
-
-    h3{
-         margin-top: 1.5rem;
-         margin-bottom: 0.5rem;
-    }
-    p{
-        margin-bottom: 0.5rem;
-        text-align: left;
-        font-weight: 500;
-        line-height: 1.6;
-    }
-
+   
  
 `;
 

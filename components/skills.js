@@ -14,9 +14,11 @@ import {
 //Styles
 const StyledSkills = styled.div`
     color: ${({ theme }) => theme.secondaryColor};
+    margin-top: 2rem;
 
     h3{
-        margin: 1rem 0 1rem 0;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
       
     }
     .technologies{
@@ -27,7 +29,6 @@ const StyledSkills = styled.div`
         align-items: flex-start;
 
         div{
-            //background: ${({ theme }) => theme.primaryColor};
             color: ${({ theme }) => theme.secondaryColor};
             font-weight: bold;
             width: 5rem;
@@ -38,21 +39,23 @@ const StyledSkills = styled.div`
             justify-content: space-between;
             margin: 0 0.8rem 0.5rem 0;
             text-align: center;
+            padding: 0.2rem;
 
             svg{
                 margin-top: 0.2rem;
                 background: ${({ theme }) => theme.secondaryColor};
                 color: ${({ theme }) => theme.lightGray};
                 font-size: ${({ theme }) => theme.largeX3};
-                padding: 0.1rem;
-                width: 80%;
+                padding: 0.8rem;
+                width: 100%;
                 height: 80%;
+                border-radius: 15px;
 
             }
 
             p{
                 font-size: ${({ theme }) => theme.verySmall};
-                font-weight: 500;
+                font-weight: 700;
                 text-align: center;
             }
         }
