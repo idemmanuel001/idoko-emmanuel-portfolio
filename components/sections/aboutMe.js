@@ -1,64 +1,113 @@
 import styled from 'styled-components';
 import { Container, Section } from '../styles/sharedStyles';
 import Emoji from '../emoji';
+import Skills from '../skills';
 
 
 
 
 const StyledAbout = styled(Section)`
     background: ${({ theme }) => theme.white};
-    color: ${({ theme }) => theme.black};
+    color: ${({ theme }) => theme.secondaryColor};
 
-
-    h2{
-        margin-bottom: 1rem;
+    .about-me{
+        display: flex;
+        flex-direction: column;
+        align-items: top;
 
         @media(min-width: ${({ theme }) => theme.desktop}){
-            margin-bottom: 1.5rem;
+            flex-direction: row;
 
         }
     }
+
+    .background{
+        
+    }
+
+    .title{
+        max-height: 3rem;
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        h2{
+            margin-bottom: 1rem;
+            z-index: 10;
+
+            @media(min-width: ${({ theme }) => theme.desktop}){
+                 margin-bottom: 1.5rem;
+
+            }
+
+            span{
+                color: ${({ theme }) => theme.primaryColor};
+            }
+        }
+    }
+
+    .line{
+            width:80%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            span{
+                width:100%;
+                height: 3px;
+                display: inline-block;
+                background: ${({ theme }) => theme.secondaryColor};
+                opacity: 0.5;
+            }
+        }
+
+
+    
+
     h3{
-        color: ${({ theme }) => theme.primaryColor};
+         margin-top: 1.5rem;
+         margin-bottom: 0.5rem;
     }
     p{
         margin-bottom: 0.5rem;
         text-align: left;
-
-        span{
-            color:  ${({ theme }) => theme.primaryColor};
-            font-weight: 500;
-        }
+        font-weight: 500;
+        line-height: 1.6;
     }
 
-
+ 
 `;
 
 const AboutMe = () => {
     return (
         <StyledAbout id='about' >
             <Container>
+                <div className="title">
+                    <h2> About <span>Me</span></h2>
+                    <div className='line'>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
                 <div className="about-me">
-                    <h2> About Me</h2>
 
                     <div id='background'>
                         <h3>
                             Hello there! <Emoji symbol={'👋'} arial-label='waving hand' />
                         </h3>
                         <p>
-                            I am <span>Idoko Emmanuel</span>, a Frontend Developer developer focused on the Javascript side of the decoupled architecture of JamStack webapps, 
-                             I enjoy converting designs to pixel perfect code implementations, either alone or as part of a team. 
-                             My goal is to continue learning to improve my technical and team skills while building applications that are reliable, scalable and efficient based on the neccessary requirements. 
+                            I am Idoko Emmanuel, a Frontend Developer developer focused on the Javascript side of the decoupled architecture of JamStack webapps,
+                            I enjoy converting designs to pixel perfect code implementations, either alone or as part of a team.
+                            My goal is to continue learning to improve my technical and team skills while building applications that are reliable, scalable and efficient based on the neccessary requirements.
                         </p>
 
-
-                        <div id='skills'>
-                            My Technical Skills includes: <span>html, css, sass, tailwindcss, javascript, styled-components, react, nextjs, graphql, git/github, shopify, etc. </span>
-                       
-                            
-                        </div>
-
                     </div>
+                    <Skills />
 
                 </div>
 

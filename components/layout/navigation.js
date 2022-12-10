@@ -36,8 +36,12 @@ const StyledDestopNav = styled.ul`
         display: block;
     }
 
+    button{
+        margin-left: 1rem;
+    }
+
     .navLinks{
-        color: ${({ theme }) => theme.white};
+        color: ${({ theme }) => theme.lightGray};
         font-size: ${(theme) => theme.medium};
         font-weight: 400;
         letter-spacing: 0.5px;
