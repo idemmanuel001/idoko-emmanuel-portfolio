@@ -57,15 +57,17 @@ const StyledAbout = styled(Section)`
                 color: ${({ theme }) => theme.primaryColor};
             }
         }
-    }
 
-    .line{
-            width:80%;
-            height: 100%;
+        hr{
             position: absolute;
             right: 0;
-            border-bottom: 3px solid ${({ theme }) => theme.secondaryColor};
+            bottom: 0;
+            width: 90%;
+            height: 3px;
+            background: ${({ theme }) => theme.secondaryColor};
+
         }
+    }
    
  
 `;
@@ -76,7 +78,8 @@ const AboutMe = () => {
             <Container>
                 <div className="title">
                     <h2> About <span>Me</span></h2>
-                    <div className='line'></div>
+                   {/*  <div className='line'></div> */}
+                   <hr />
                 </div>
 
                 <div className="about-me">
@@ -86,7 +89,7 @@ const AboutMe = () => {
                             Hello! <Emoji symbol={'👋'} arial-label='waving hand' />
                         </h3>
                         <p>
-                            I am Emmanuel, a frontend developer living on the blue planet. <Emoji symbol={'🌍'} arial-label='earth' />  My curiosity for knowledge led me into the tech sector, and learning has been amazing. 
+                            I am Emmanuel, a frontend developer living on the blue planet <Emoji symbol={'🌍'} arial-label='earth' />.  My curiosity for knowledge led me into the tech sector, and learning has been amazing. 
                             I pay attention to user needs and use my knowledge to produce user-friendly websites.
                         </p>
 
