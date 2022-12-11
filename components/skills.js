@@ -14,7 +14,7 @@ import {
 //Styles
 const StyledSkills = styled.div`
     color: ${({ theme }) => theme.secondaryColor};
-    margin-top: 2rem;
+    margin-top: 0.5rem;
 
     h3{
         margin-top: 1rem;
@@ -25,7 +25,7 @@ const StyledSkills = styled.div`
         display: flex;
         flex-wrap: wrap;
         align-content: stretch;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: flex-start;
 
         div{

@@ -16,22 +16,22 @@ const StyledAbout = styled(Section)`
         align-items: top;
 
         @media(min-width: ${({ theme }) => theme.desktop}){
-            flex-direction: row;
+          
 
         }
     }
 
     .background{
         h3{
-            margin-top: 1.5rem;
             margin-bottom: 0.5rem;
         }
 
         p{
             margin-bottom: 0.5rem;
             text-align: left;
-            font-weight: 600;
+            font-weight: 400;
             line-height: 1.6;
+            margin-top: 0.2rem;
 
         }
 
@@ -44,7 +44,7 @@ const StyledAbout = styled(Section)`
         justify-content: flex-start;
         align-items: flex-start;
         margin-top: 1rem;
-        margin-bottom: 2rem;
+        margin-bottom: 2.5rem;
 
         h2{
             z-index: 10;
@@ -67,7 +67,7 @@ const StyledAbout = styled(Section)`
             right: 0;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: end;
 
             span{
                 width:100%;
@@ -89,22 +89,23 @@ const AboutMe = () => {
                     <h2> About <span>Me</span></h2>
                     <div className='line'>
                         <span></span>
-                        <span></span>
                     </div>
                 </div>
 
                 <div className="about-me">
 
-                    <div id='background'>
+                    <div className='background'>
                         <h3>
-                            Hello there! <Emoji symbol={'👋'} arial-label='waving hand' />
+                            Hello! <Emoji symbol={'👋'} arial-label='waving hand' />
                         </h3>
                         <p>
-                            I am Idoko Emmanuel, a Frontend Developer developer focused on the Javascript side of the decoupled architecture of JamStack webapps,
-                            I enjoy converting designs to pixel perfect code implementations, either alone or as part of a team.
-                            My goal is to continue learning to improve my technical and team skills while building applications that are reliable, scalable and efficient based on the neccessary requirements.
+                            I am Emmanuel a frontend developer living on the blue planet. <Emoji symbol={'🌍'} arial-label='earth' />
+                        </p>
+                        <p>
+                            My curiosity for knowledge led me into the tech world and learning has been amazing, I pay attention to user needs and use my knowledge to produce user friendly websites.
                         </p>
 
+                        <p>My goal is to keep learning to improve my technical and team skills while buiding applications that are relaible, scalable and efficient based on the necessary requirements </p>
                     </div>
                     <Skills />
 
