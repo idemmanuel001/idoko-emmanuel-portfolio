@@ -16,35 +16,39 @@ const StyledProject = styled(Section)`
         background: inherit;
 
        .title{
-        max-height: 4.2rem;
-        position: relative;
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        margin-top: 1rem;
-        margin-bottom: 2.5rem;
+            height: fit-content;
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin-top: 1rem;
+            margin-bottom: 2.5rem;
 
-        h2{
-            z-index: 10;
+            h2{
+                z-index: 10;
 
-            @media(min-width: ${({ theme }) => theme.desktop}){
-                 margin-bottom: 1.5rem;
+                @media(min-width: ${({ theme }) => theme.desktop}){
+                    margin-bottom: 1.5rem;
 
+                }
+
+                span{
+                    color: ${({ theme }) => theme.primaryColor};
+                }
+                }
             }
 
-            span{
-                color: ${({ theme }) => theme.primaryColor};
-            }
-            }
+            hr{
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 90%;
+                height: 3px;
+                background: ${({ theme }) => theme.lightGray};
+
         }
 
-         .line{
-            width:80%;
-            height: 100%;
-            position: absolute;
-            right: 0;
-            border-bottom: 3px solid ${({ theme }) => theme.lightGray};
-        }
+    
     }
 
     .projectsContainer{
@@ -71,7 +75,7 @@ const Projects = ({ projects }) => {
                 <Container>
                     <div className="title">
                         <h2>Some Things <span>I&rsquo;ve Built</span></h2>
-                        <div className='line'></div>
+                        <hr />
                     </div>
 
                     <div className="projectsContainer">
