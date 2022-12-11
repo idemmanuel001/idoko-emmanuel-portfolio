@@ -69,6 +69,10 @@ const GlobalStyles = createGlobalStyle`
     h2{
         font-size: ${({theme}) => theme.largeX2};
         margin-bottom: 1rem;
+
+         @media(${({theme}) => theme.tablet}){
+            font-size: ${({theme}) => theme.largeX3};
+         }
     }
 
     h3{

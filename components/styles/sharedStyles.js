@@ -25,7 +25,7 @@ const Button = styled.button`
     cursor: pointer;
     font-size: ${({ theme }) => theme.medium};
     font-weight: 400;
-    padding: 0.5rem ;
+    padding: 0.5rem;
     transition: all 0.3s ease-in;
     background: ${({ bg }) => bg || 'transparent'};
     color: ${({ color, theme }) => color || theme.primaryColor};

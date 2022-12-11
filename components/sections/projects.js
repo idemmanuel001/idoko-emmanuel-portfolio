@@ -6,14 +6,45 @@ import { Container, Section } from '../styles/sharedStyles';
 
 //Project Style
 const StyledProject = styled(Section)`
-    color:  ${({ theme }) => theme.primaryColor};
-    background:  ${({ theme }) => theme.black};
+    color:  ${({ theme }) => theme.lightGray};
+    background:  ${({ theme }) => theme.secondaryColor};
 
 
     .outerContainer{
         width: 100%;
         color: inherit;
         background: inherit;
+
+       .title{
+        max-height: 4.2rem;
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: 1rem;
+        margin-bottom: 2.5rem;
+
+        h2{
+            z-index: 10;
+
+            @media(min-width: ${({ theme }) => theme.desktop}){
+                 margin-bottom: 1.5rem;
+
+            }
+
+            span{
+                color: ${({ theme }) => theme.primaryColor};
+            }
+            }
+        }
+
+         .line{
+            width:80%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            border-bottom: 3px solid ${({ theme }) => theme.lightGray};
+        }
     }
 
     .projectsContainer{
@@ -38,11 +69,11 @@ const Projects = ({ projects }) => {
 
             <div className="outerContainer">
                 <Container>
-                    <h2>Projects</h2>
+                    <div className="title">
+                        <h2>Some Things <span>I&rsquo;ve Built</span></h2>
+                        <div className='line'></div>
+                    </div>
 
-                    <p>
-                        Here are some of the projects I worked on recently...
-                    </p>
                     <div className="projectsContainer">
                         {projects.map((project, index) => (
 
@@ -189,7 +220,7 @@ function ProjectItem({ project }) {
                     width='320'
                     height='180'
                     objectFit='fill' />
-                    <div className='overlay'></div>
+                <div className='overlay'></div>
             </div>
 
             <div className="projectBody">
@@ -204,7 +235,7 @@ function ProjectItem({ project }) {
                 <p className='description'>
                     <span>description:</span>
 
-                    {isOpen ? content : description +'...'}
+                    {isOpen ? content : description + '...'}
 
                     <button onClick={() => setIsOpen(!isOpen)} >
                         {isOpen ? 'view less' : 'view more'}

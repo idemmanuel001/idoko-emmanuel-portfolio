@@ -17,7 +17,6 @@ const StyledAbout = styled(Section)`
 
         @media(min-width: ${({ theme }) => theme.desktop}){
           
-
         }
     }
 
@@ -38,7 +37,7 @@ const StyledAbout = styled(Section)`
     }
 
     .title{
-        max-height: 3rem;
+        max-height: 4.2rem;
         position: relative;
         display: flex;
         justify-content: flex-start;
@@ -65,17 +64,7 @@ const StyledAbout = styled(Section)`
             height: 100%;
             position: absolute;
             right: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: end;
-
-            span{
-                width:100%;
-                height: 3px;
-                display: inline-block;
-                background: ${({ theme }) => theme.secondaryColor};
-                opacity: 0.5;
-            }
+            border-bottom: 3px solid ${({ theme }) => theme.secondaryColor};
         }
    
  
@@ -87,9 +76,7 @@ const AboutMe = () => {
             <Container>
                 <div className="title">
                     <h2> About <span>Me</span></h2>
-                    <div className='line'>
-                        <span></span>
-                    </div>
+                    <div className='line'></div>
                 </div>
 
                 <div className="about-me">
@@ -99,13 +86,13 @@ const AboutMe = () => {
                             Hello! <Emoji symbol={'👋'} arial-label='waving hand' />
                         </h3>
                         <p>
-                            I am Emmanuel a frontend developer living on the blue planet. <Emoji symbol={'🌍'} arial-label='earth' />
-                        </p>
-                        <p>
-                            My curiosity for knowledge led me into the tech world and learning has been amazing, I pay attention to user needs and use my knowledge to produce user friendly websites.
+                            I am Emmanuel, a frontend developer living on the blue planet. <Emoji symbol={'🌍'} arial-label='earth' />  My curiosity for knowledge led me into the tech sector, and learning has been amazing. 
+                            I pay attention to user needs and use my knowledge to produce user-friendly websites.
                         </p>
 
-                        <p>My goal is to keep learning to improve my technical and team skills while buiding applications that are relaible, scalable and efficient based on the necessary requirements </p>
+                        <p>
+                            My goal is to keep learning to improve my technical and team skills while building web apps that are reliable, scalable, and efficient based on the requirements.
+                        </p>
                     </div>
                     <Skills />
 
