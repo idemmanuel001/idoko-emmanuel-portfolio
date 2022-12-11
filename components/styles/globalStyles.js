@@ -72,7 +72,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     h3{
-        font-weight: 600;
+        font-weight: 500;
         font-size: ${({theme}) => theme.large};
 
         @media(${({theme}) => theme.desktop}){
@@ -83,7 +83,6 @@ const GlobalStyles = createGlobalStyle`
     }
 
     p{
-        font-weight: 400;
         font-size: ${({theme}) => theme.medium};
 
         @media(${({theme}) => theme.tablet}){
