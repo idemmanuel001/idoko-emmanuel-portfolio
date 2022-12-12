@@ -7,16 +7,15 @@ import * as Yup from 'yup';
 //STYLES
 const StyledContact = styled(Section)`
     width: 100%;
-    background: ${({ theme }) => theme.primaryColor};
-    color: ${({ theme }) => theme.black};
+    background: ${({ theme }) => theme.white};
     min-height: 100vh;
     overflow: auto;
     z-index: 11;
 
     #innerContainer{
         width: 100%;
-        background: ${({ theme }) => theme.black};
-        color:  ${({ theme }) => theme.primaryColor};
+        background: ${({ theme }) => theme.secondaryColor};
+        color:  ${({ theme }) => theme.lightGray};
         min-height: 50vh;
         margin-left: auto;
         margin-right: auto;
@@ -78,7 +77,7 @@ const StyledContact = styled(Section)`
             word-wrap: break-word;
         }
         a{
-            color: ${({ theme }) => theme.primaryColor};
+            color: ${({ theme }) => theme.lightGray};
             display: block;
             margin-top: 0.5rem;
             text-decoration: underline;
@@ -87,7 +86,7 @@ const StyledContact = styled(Section)`
 
 
             &:hover{
-                color: ${({ theme }) => theme.accentColor};
+                color: ${({ theme }) => theme.primaryColor};
             }
 
              p{
@@ -104,7 +103,7 @@ const StyledContact = styled(Section)`
         width: 100%;
         z-index: 11;
         color: #fff;
-        background: ${({ theme }) => theme.primaryColor};
+        background: ${({ theme }) => theme.white};
         padding: 1rem 1rem 1rem 1rem;
         display: flex;
         flex-direction: column;
@@ -128,11 +127,11 @@ const StyledContact = styled(Section)`
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-        color: ${({ theme }) => theme.black};
-        background-color: ${({ theme }) => theme.primaryColor};
+        color: ${({ theme }) => theme.secondaryColor};
+        background: ${({ theme }) => theme.white};
 
         &::selection{
-            background-color: ${({ theme }) => theme.primaryColor};
+            background: ${({ theme }) => theme.white};
         }
 
         label{
@@ -148,8 +147,8 @@ const StyledContact = styled(Section)`
         textarea{
             width: 100%;
             height: 2.5rem;
-            color: ${({ theme }) => theme.black};
-            background: ${({ theme }) => theme.primaryColor};
+            color: ${({ theme }) => theme.secondaryColor};
+            background: ${({ theme }) => theme.white};
             font-size: ${({ theme }) => theme.small};
             font-weight: 400;
             padding: 0.5rem 0;
@@ -159,7 +158,7 @@ const StyledContact = styled(Section)`
             transition: all 0.3s ease-in;
 
             &:focus{
-                border-bottom: 3px solid ${({ theme }) => theme.black};
+                border-bottom: 3px solid ${({ theme }) => theme.secondaryColor};
             }
         }
 
@@ -183,9 +182,7 @@ const StyledContact = styled(Section)`
 
             &:hover{
                 width: 100%;
-                color: ${({ theme }) => theme.accentColor};
                 background: transparent;
-                border: 2px solid ${({ theme }) => theme.black};
             }
         }
 
@@ -344,11 +341,8 @@ const ContactMe = () => {
                         <p className="formControl"  >
                             <Button name='submit'
                                 type="submit"
-                                bg={({ theme }) => theme.accentColor}
-                                color={({ theme }) => theme.black}
-                                borderColor={({ theme }) => theme.accentColor}
-                                hoverColor={({ theme }) => theme.accentColor}
-                                hoverBorderColor={({ theme }) => theme.black}
+                                color={({ theme }) => theme.secondaryColor}
+                                borderColor={({ theme }) => theme.secondaryColor}
                             >Submit</Button>
                         </p>
                     </form>

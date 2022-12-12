@@ -51,8 +51,7 @@ const StyledDestopNav = styled.ul`
         padding: 0.1rem 0;
         opacity: 0;
         transform: translate(100vw, -100vh);
-       
-        
+
 
         &:hover{
             color: ${({ theme }) => theme.darkGray};
@@ -208,22 +207,22 @@ const MobileNav = () => {
             (<StyledMobileNav
                 isOpen={isOpen}>
                 {links.map(link => {
-                    return (
-                        <Link
-                            activeClass="active"
-                            to={link.to}
-                            spy={true}
-                            smooth={true}
-                            offset={-70}
-                            duration={500}
-                            key={link.name}
-                            onClick={() => setIopen(false)}
+                    return <Link
+                        activeClass="active"
+                        to={link.to}
+                        spy={true}
+                        smooth={true}
+                        offset={-70}
+                        duration={500}
+                        key={link.name}
+                        onClick={() => setIopen(false)}
 
-                            className='navLinks'>
+                        className='navLinks'>
 
-                            {link.name}
-                        </Link>
-                    );
+                        {link.name}
+                    </Link>;
+
+
                 })}
                 <Button>Resume</Button>
             </StyledMobileNav>)
