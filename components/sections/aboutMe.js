@@ -61,10 +61,14 @@ const StyledAbout = styled(Section)`
         hr{
             position: absolute;
             right: 0;
-            bottom: 0;
+            bottom: 0.2rem;
             width: 90%;
             height: 3px;
             background: ${({ theme }) => theme.secondaryColor};
+
+            @media(min-width: ${({ theme }) => theme.desktop}){
+                     bottom: 0;
+                }
 
         }
     }

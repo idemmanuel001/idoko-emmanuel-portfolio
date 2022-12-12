@@ -3,7 +3,9 @@
 
 const Project = () => {
   return (
-    <div>[project]</div>
+    <div>
+       hfdh
+    </div>
   )
 }
 
