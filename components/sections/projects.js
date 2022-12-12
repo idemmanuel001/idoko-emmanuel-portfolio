@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import styled from 'styled-components';
 import { Container, Section } from '../styles/sharedStyles';
+import { IoMdArrowRoundForward } from 'react-icons/io';
 
 
 //Project Style
@@ -24,6 +26,10 @@ const StyledProject = styled(Section)`
             margin-top: 1rem;
             margin-bottom: 2.5rem;
 
+            @media(min-width: ${({ theme }) => theme.tablet}){
+                margin-bottom: 5rem;
+            }
+
             h2{
                 z-index: 10;
 
@@ -41,10 +47,14 @@ const StyledProject = styled(Section)`
             hr{
                 position: absolute;
                 right: 0;
-                bottom: 0;
+                bottom: 0.2rem;
                 width: 90%;
                 height: 3px;
                 background: ${({ theme }) => theme.lightGray};
+
+                @media(min-width: ${({ theme }) => theme.desktop}){
+                     bottom: 0;
+                }
 
         }
 
@@ -83,7 +93,6 @@ const Projects = ({ projects }) => {
 
                             <ProjectItem key={index} project={project} />
 
-
                         ))}
                     </div>
 
@@ -99,121 +108,101 @@ const Projects = ({ projects }) => {
 
 //ProjectItem styles
 const StyledProJectItem = styled.div`
-    width: 320px;
+    position: relative;
+    width: 100%;
     height: fit-content;
-    margin: 1rem auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
+    margin: 2rem auto;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 4px -3px 4px -1px rgb(181,181,181), -3px 3px 4px -1px rgb(181,181,181);
-    background: ${({ theme }) => theme.primaryColor};
-    color: ${({ theme }) => theme.black};
+    border: 1px solid ${({ theme }) => theme.lightGray};
+    cursor: pointer;
+    
 
     @media(min-width: ${({ theme }) => theme.tablet}){
-        margin: 1rem 0;
+        margin: 2rem 0;
+        display: flex;
+        flex-direction: row-reverse;
+        position: static;
+        align-items: center;
+        justify-content: space-between;
+        border: none;
+        border-radius: 0;
     }
 
     .projectImage{
         position: relative;
+        width: 100%;
+        height: 15rem;
 
-        .overlay{
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0, 0.35);
-            transition: all 0.5s ease-in;
-
-            &:focus,
-            &:hover{
-                transform: scale(0.05, 0.05);
-                opacity: 0;
-            }
+        @media(min-width: ${({ theme }) => theme.tablet}){
+            border-radius: 15px;
+            overflow: hidden;
         }
     }
 
     .projectBody{
-        padding: 0.5rem 1rem 1rem 1rem;
         margin: 0 auto;
-        font-size: ${({ theme }) => theme.small};
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: ${({ theme }) => theme.white};
+        background: ${({ theme }) => theme.secondaryColor};
+        opacity: 0.8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease-in;
 
-        h3{
-            font-weight: bold;
-            font-size: ${({ theme }) => theme.medium};
-            margin-bottom: 0.1rem;
+
+        @media(min-width: ${({ theme }) => theme.tablet}){
+            position: static;
+            color: ${({ theme }) => theme.lightGray};
+            background: ${({ theme }) => theme.black};
+            opacity: 0.5;
+            padding: 3.5rem 0;
+            border-radius: 10px;
+            margin-right: -15%;
+
         }
 
-        p{
-            font-weight: 400;
-            font-size: ${({ theme }) => theme.small};
+        &:hover{
+            color: ${({ theme }) => theme.primaryColor};
+        }
+
+        h3{ 
+            font-weight: bold;
+            text-decoration: underline;
+            text-transform: capitalize;
+            font-size: ${({ theme }) => theme.large};
+
+            @media(min-width: ${({ theme }) => theme.tablet}){
+                font-size: ${({ theme }) => theme.largeX2};
+            }
         }
 
         span{
-            font-weight: 600;
-            font-size: ${({ theme }) => theme.small};
-            text-decoration: underline;
-            margin-right: 0.3rem;
+            width: 4rem;
+            height: 3rem;
         }
 
-        .stack{
-            margin-bottom: 0.3rem;
-        }
-
-        .description{
-
-
-            button{
-                background: transparent !important;
-                border: none;
-                color: ${({ theme }) => theme.accentColor};
-                margin-left: 0.3rem;
-                cursor: pointer;
-                text-decoration: underline;
-            }
-        }
-
-       
-    }
-
-     .links{
-            display: flex;
-            justify-content: center;
-            height: fit-content;
+        svg{
             width: 100%;
-            justify-content: flex-start;
-            align-items: center;
-            background: ${({ theme }) => theme.black};
-            padding: 0.8rem 1rem;
-        }
-        a{
-            text-decoration: underline;
-            color: ${({ theme }) => theme.primaryColor};
-            margin-right: 1rem;
-
-            &:hover,
-            &:active{
-                color: ${({ theme }) => theme.accentColor};
-                transition: all 0.3s ease-in;
-            }
-
+            height: 100%;
         }
 
+         
+    }
 
 `;
 
 
 //ProjectItem Markup
 function ProjectItem({ project }) {
-    const [isOpen, setIsOpen] = useState(false);
 
 
-    const { frontmatter: { title, description, image, stack, code, live }, content } = project;
+    const { frontmatter: { title, image }, content } = project;
     return (
         <StyledProJectItem>
 
@@ -221,36 +210,22 @@ function ProjectItem({ project }) {
                 <Image
                     src={image}
                     alt={title}
-                    width='320'
-                    height='180'
-                    objectFit='fill' />
-                <div className='overlay'></div>
+                    layout='fill'
+                    objectFit='fill'
+                />
             </div>
 
-            <div className="projectBody">
+            <Link href={`projects/${title}`} passhref>
+                <div className="projectBody">
 
-                <h3> {title} </h3>
+                    <h3> {title} </h3>
+                    <span>
+                        <IoMdArrowRoundForward />
+                    </span>
 
-                <p className='stack'>
-                    <span>stack: </span>
-                    {stack.join(', ')}
-                </p>
+                </div>
+            </Link>
 
-                <p className='description'>
-                    <span>description:</span>
-
-                    {isOpen ? content : description + '...'}
-
-                    <button onClick={() => setIsOpen(!isOpen)} >
-                        {isOpen ? 'view less' : 'view more'}
-                    </button>
-                </p>
-
-            </div>
-            <div className="links">
-                <a href={live} className="href" target="_blank" rel="noopener noreferrer" > live site</a>
-                <a href={code} className="href" target="_blank" rel="noopener noreferrer"> view code</a>
-            </div>
 
 
         </StyledProJectItem>

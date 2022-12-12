@@ -4,6 +4,7 @@ import { Link } from 'react-scroll';
 import { MobileNav, DestopNav } from './navigation';
 import styled from 'styled-components';
 import Image from 'next/image';
+import NextLink from 'next/link';
 import { Container } from '../styles/sharedStyles';
 
 
@@ -58,7 +59,8 @@ export default function Header() {
     return (
         <StyledHeader >
             <Container>
-                <Link
+                <NextLink href={'/'} passHref>
+                    <Link
                     to='home'
                     spy={true}
                     smooth={true}
@@ -76,7 +78,8 @@ export default function Header() {
                             priority='true'
                         />
                     </div>
-                </Link>
+                    </Link>
+                </NextLink>
                 <MobileNav />
                 <DestopNav />
             </Container>

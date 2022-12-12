@@ -175,8 +175,9 @@ const StyledMobileNav = styled.ul`
     }
 
     button {
-        margin-top: 1rem;
+        margin-top: 2rem;
         margin-bottom: 1rem;
+        width: 100%;
     }
 `;
 

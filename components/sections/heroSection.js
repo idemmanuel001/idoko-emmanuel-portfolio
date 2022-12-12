@@ -124,7 +124,7 @@ const Herosection = () => {
                     ref={heroRef}
                     className="innerContainer">
                     <div id='firstContainer'>
-                        <h1>Detail-Oriented <span>Frontend Developer </span> focused on timely value delivery</h1>
+                        <h1>Detail-Oriented <span>Frontend Developer </span> focused on timely value delivery.</h1>
                         <Link
                         activeClass="active"
                             to='contact'
