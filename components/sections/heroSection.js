@@ -7,10 +7,11 @@ import { Link, animateScroll as scroll } from "react-scroll";
 
 
 
+
 const StyledHeroSection = styled(Section)`
     height: fit-content;
     overflow: hidden;
-    background: ${({ theme }) => theme. secondaryColor};
+    background: ${({ theme }) => theme.secondaryColor};
     color: ${({ theme }) => theme.lightGray};
     display: flex;
     align-items: center;
@@ -126,14 +127,14 @@ const Herosection = () => {
                     <div id='firstContainer'>
                         <h1>Detail-Oriented <span>Frontend Developer </span> focused on timely value delivery.</h1>
                         <Link
-                        activeClass="active"
+                            activeClass="active"
                             to='contact'
                             spy={true}
                             smooth={true}
                             offset={-70}
                             duration={500} >
-                                Hire Me
-                            </Link>
+                            Hire Me
+                        </Link>
                     </div>
 
                     <div id="imgContainer">

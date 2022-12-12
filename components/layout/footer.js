@@ -10,8 +10,8 @@ const StyledFooter = styled.footer`
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    background:  ${({ theme }) => theme.black};
-    color:   ${({ theme }) => theme.primaryColor};
+    background:  ${({ theme }) => theme.secondaryColor};
+    color:   ${({ theme }) => theme.lightGray};
     z-index: 1; 
 
     p{
@@ -24,7 +24,7 @@ const StyledFooter = styled.footer`
     }
     a,
     span{
-        color:  ${({ theme }) => theme.secondaryColor};
+        color:  ${({ theme }) => theme.primaryColor};
     }
     a{
         text-decoration: underline;

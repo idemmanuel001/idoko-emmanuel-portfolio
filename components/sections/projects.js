@@ -212,6 +212,8 @@ function ProjectItem({ project }) {
                     alt={title}
                     layout='fill'
                     objectFit='fill'
+                    placeholder='blur'
+                    blurDataURL={image}
                 />
             </div>
 

@@ -34,10 +34,10 @@ const Button = styled.button`
    
 
     &:hover{
-        color: ${({ theme }) => theme.lightGray};
+        color: ${({ borderColor, theme }) => borderColor || theme.lightGray};
      }
     &:active{
-        color: ${({ theme }) => theme.lightGray};
+        color: ${({ borderColor, theme }) => borderColor || theme.lightGray};
      }
 
 `;
