@@ -27,7 +27,7 @@ const StyledContact = styled(Section)`
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        border: 2px solid ${({ theme }) => theme.black};
+        border: 2px solid ${({ theme }) => theme.secondaryColor};
 
         @media(min-width: ${({ theme }) => theme.desktop}){
              flex-direction: row;
@@ -191,7 +191,7 @@ const StyledContact = styled(Section)`
     }
 `;
 
-//heler function to encode the form value ina way netlify would understand it
+//heler function to encode the form value in a way netlify would understand it
 const encode = (data) => {
     return Object.keys(data)
         .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
