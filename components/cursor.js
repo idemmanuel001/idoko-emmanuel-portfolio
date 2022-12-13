@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 
 const StyledCursor = styled.div`
-    background: ${({ theme }) => theme.secondaryColor};
+    background: ${({ theme }) => theme.primaryColor};
     display: none; 
 
     @media(min-width: ${({ theme }) => theme.desktop}){
@@ -13,7 +13,7 @@ const StyledCursor = styled.div`
 
     .cursor{
         position: fixed;
-        background-color: ${({ theme }) => theme.accentColor};
+        background: ${({ theme }) => theme.primaryColor};
         width: 10px;
         height: 10px;
         border-radius: 100%;
@@ -29,7 +29,7 @@ const StyledCursor = styled.div`
 
     .cursorFollower{
         position: fixed;
-        border:2px solid ${({ theme }) => theme.secondaryColor};
+        border:2px solid ${({ theme }) => theme.primaryColor};
         width: 30px;
         height: 30px;
         border-radius: 100%;

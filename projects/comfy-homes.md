@@ -2,7 +2,7 @@
 title: 'comfy-homes'
 stack: ['react', 'nextjs', 'tailwindcss', 'google map api', 'rapidapi rest api']
 description: 'This is a real estate website built using nextjs and styled using tailwindcss.'
-image: '/images/comfy-homes.png'
+image: '/images/comfy-homes.webp'
 code: 'https://github.com/idemmanuel001/comfy-homes'
 live: 'https://comfy-homes.vercel.app'
 ---

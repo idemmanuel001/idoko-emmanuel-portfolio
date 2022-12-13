@@ -78,6 +78,7 @@ const StyledProject = styled(Section)`
 //Project Markup
 const Projects = ({ projects }) => {
 
+
     return (
         <StyledProject id='projects'>
 
@@ -202,7 +203,7 @@ const StyledProJectItem = styled.div`
 function ProjectItem({ project }) {
 
 
-    const { frontmatter: { title, image }, content } = project;
+    const { frontmatter: { title, image }, slug } = project;
     return (
         <StyledProJectItem>
 
@@ -217,7 +218,7 @@ function ProjectItem({ project }) {
                 />
             </div>
 
-            <Link href={`projects/${title}`} passhref>
+            <Link href={`projects/${slug}`} passhref>
                 <div className="projectBody">
 
                     <h3> {title} </h3>
