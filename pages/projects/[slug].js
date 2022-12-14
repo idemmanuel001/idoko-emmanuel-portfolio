@@ -1,5 +1,6 @@
 import { Container } from '../../components/styles/sharedStyles';
 import Image from 'next/image';
+import Link from 'next/link';
 import styled from 'styled-components';
 import fs from 'fs';
 import path from 'path';
@@ -12,12 +13,13 @@ const StyledProject = styled.div`
       color: ${({ theme }) => theme.lightGray};
 
       h2{
-       // margin-bottom: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
       }
 
       p{
         font-size: ${({ theme }) => theme.medium};
-         margin-bottom: 0.3rem;
+        margin-bottom: 0.3rem;
         line-height: 1.5;
       }
       a{
@@ -51,6 +53,9 @@ const Project = ({ frontmatter, content }) => {
   return (
     <StyledProject>
       <Container>
+        <Link href='/' passhref>
+          <a>go back home</a>
+        </Link>
 
         <h2>{title}</h2>
 
