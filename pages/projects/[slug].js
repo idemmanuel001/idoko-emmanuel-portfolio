@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { IoMdArrowBack } from 'react-icons/io';
 
 
 
@@ -25,6 +26,17 @@ const StyledProject = styled.div`
       a{
         text-decoration: underline;
         color: inherit;
+      }
+
+      .back-home{
+        display: flex;
+        align-items: center;
+        height: 1rem;
+
+        span{
+          margin-right: 0.2rem;
+          height: 100%;
+        }
       }
 
 
@@ -54,7 +66,10 @@ const Project = ({ frontmatter, content }) => {
     <StyledProject>
       <Container>
         <Link href='/' passhref>
-          <a>go back home</a>
+          <a className='back-home'>
+            <span><IoMdArrowBack /> </span>
+            go back home
+          </a>
         </Link>
 
         <h2>{title}</h2>
