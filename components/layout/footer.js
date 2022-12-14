@@ -13,6 +13,7 @@ const StyledFooter = styled.footer`
     background:  ${({ theme }) => theme.secondaryColor};
     color:   ${({ theme }) => theme.lightGray};
     z-index: 1; 
+    border-top: 1px solid ${({theme})=> theme.lightGray};
 
     p{
         height: 100%;
