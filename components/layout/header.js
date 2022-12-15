@@ -9,8 +9,8 @@ import { Container } from '../styles/sharedStyles';
 
 
 const StyledHeader = styled.div`
-     width: 100%;
-   //  background: #060809;
+    width: 100%;
+    background: #060809;
     background: ${({ theme }) => theme. secondaryColor};
 
      position: sticky;
@@ -55,7 +55,7 @@ export default function Header() {
         timeline.to(logoRef.current, { opacity: 1, x: 0, y: 0, duration: 2, ease: 'power4.inOut' });
         return () => timeline.kill();
     }, []);
-
+ 
     return (
         <StyledHeader >
             <Container>

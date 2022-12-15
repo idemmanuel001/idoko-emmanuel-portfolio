@@ -1,10 +1,9 @@
-import { useRef, useLayoutEffect } from 'react';
+import { useRef, useLayoutEffect, useEffect, useState } from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
 import { Container, Section } from '../styles/sharedStyles';
 import { gsap } from 'gsap';
-import { Link, animateScroll as scroll } from "react-scroll";
-
+import { Link } from "react-scroll";
 
 
 
@@ -116,11 +115,9 @@ const Herosection = () => {
         gsap.to(heroRef.current, { clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)', opacity: 1, y: 0, duration: 2.5, ease: 'power4.inOut' });
     }, []);
 
-
     return (
         <StyledHeroSection id='home'>
             <Container>
-
                 <div
                     ref={heroRef}
                     className="innerContainer">
