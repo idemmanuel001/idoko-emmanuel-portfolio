@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect, useRef } from 'react';
+import { useState, useLayoutEffect, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { Link, animateScroll as scroll } from "react-scroll";
 import { IoMenuSharp, IoClose } from 'react-icons/io5';
@@ -65,8 +65,10 @@ const StyledDestopNav = styled.ul`
 const DestopNav = () => {
     const destopnavRef = useRef(null);
 
+
     useLayoutEffect(() => {
         const timeline = gsap.timeline();
+
         timeline.to(destopnavRef.current.children, { opacity: 1, x: 0, y: 0, duration: 2, ease: 'power4.inOut', stagger: 0.15 });
 
         return () => timeline.kill();

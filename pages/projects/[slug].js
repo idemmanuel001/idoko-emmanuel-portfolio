@@ -30,6 +30,7 @@ const StyledProject = styled.div`
 
       .back-home{
         display: flex;
+        width: fit-content;
         align-items: center;
         height: 1rem;
 
@@ -51,13 +52,20 @@ const StyledProject = styled.div`
          @media(min-width: ${({ theme }) => theme.tablet}){
             height: 25rem;
          }
+
+         .overlay{
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          right: 0;
+          background: black;
+         }
       }
 `;
 
 
 const Project = ({ frontmatter, content }) => {
-
-  console.log(frontmatter);
 
   const { title, stack, description, image, live, code
   } = frontmatter;
@@ -89,6 +97,7 @@ const Project = ({ frontmatter, content }) => {
 
 
         <div className='image-container'>
+          <div className='overlay'></div>
           <Image
             src={image}
             alt={title}
