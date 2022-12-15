@@ -9,7 +9,7 @@ const Container = styled.div`
     overflow: hidden;
 
     @media(min-width: ${({ theme }) => theme.desktop}){
-        padding: 6em 1.2rem ;
+        padding: 5em 1.2rem ;
                
     }
 `;
