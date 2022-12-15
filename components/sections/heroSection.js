@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Container, Section } from '../styles/sharedStyles';
 import { gsap } from 'gsap';
 import { Link } from "react-scroll";
+import { BsLinkedin, BsGithub, BsTwitter, BsFillEnvelopeFill } from 'react-icons/bs';
 
 
 
@@ -22,7 +23,7 @@ const StyledHeroSection = styled(Section)`
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 1rem;
+        margin-top: 4rem;
         clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
         opacity: 0;
         transform: translateY(100px);
@@ -33,9 +34,8 @@ const StyledHeroSection = styled(Section)`
             flex-direction: row;
             justify-content: between;
             align-items: center;
-            padding-top: 2rem;
+            margin-top: 0;
             overflow: hidden;
-
         }
 
         #firstContainer{
@@ -43,30 +43,34 @@ const StyledHeroSection = styled(Section)`
             flex-direction: column;
             align-items: center;
             justify-content: start;
+            margin-bottom: 3rem;
 
 
-             @media(min-width: ${({ theme }) => theme.desktop}){
-                padding-top: 1rem;
+             @media(min-width: ${({ theme }) => theme.tablet}){
                 justify-content: center;
-                overflow: hidden;
+                align-items: flex-start;
+                height: fit-content;
+                margin-top: 3rem;
 
-                }
+            }
 
             h1{
                 margin-bottom: 1rem;
+
                 span{
                     color: ${({ theme }) => theme.primaryColor};
                 }
 
                 @media(min-width: ${({ theme }) => theme.desktop}){
-                    margin-bottom: 1rem;
+                    margin-bottom: 1.5rem;
                     margin-right: 0.3rem;
                     justify-content: flex-start;
 
                 }
 
             }
-            a{
+
+            .hireme{
                 margin-top: 0.8rem;
                 width: 25%;
                 min-width: fit-content;
@@ -74,17 +78,54 @@ const StyledHeroSection = styled(Section)`
                 font-size: ${({ theme }) => theme.medium};
                 font-weight: bold;
                 text-align: center;
-                padding: 0.5rem ;
+                padding: 0.5rem;
                 transition: all 0.3s ease-in;
                 outline: none;
                 border: 2px solid ${({ theme }) => theme.primaryColor};
                 border-radius: 10px;
-                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
                 cursor: pointer;
 
                 @media(min-width: ${({ theme }) => theme.desktop}){
                     width: 14rem;
-                   
+                    margin-top: 0;
+                }
+            }
+
+            .socials{
+                min-width: fit-content;
+                align-self: flex-start;
+                font-size: ${({ theme }) => theme.medium};
+                font-weight: bold;
+                text-align: center;
+                margin-top: 0.8rem;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: start;
+
+                @media(min-width: ${({ theme }) => theme.desktop}){
+                    margin-bottom: 1.5rem;
+
+                }
+
+
+                a{
+                    color: ${({ theme }) => theme.lightGray};
+                    border-radius: 10px;
+                    padding: 0.5rem 0;
+                    margin-right: 1rem;
+                    transition: all 0.3s ease-in;
+
+
+                    &:hover{
+                        color: ${({ theme }) => theme.primaryColor};
+                         
+                    }
+
+                    svg{
+                        font-size: ${({ theme }) => theme.large};
+                    }
+
                 }
             }
         }
@@ -124,6 +165,7 @@ const Herosection = () => {
                     <div id='firstContainer'>
                         <h1>Detail-Oriented <span>Frontend Developer </span> focused on timely value delivery.</h1>
                         <Link
+                            className='hireme'
                             activeClass="active"
                             to='contact'
                             spy={true}
@@ -132,6 +174,13 @@ const Herosection = () => {
                             duration={500} >
                             Hire Me
                         </Link>
+
+                        <div className="socials">
+                            <a href='https://github.com/idemmanuel001'><BsGithub /></a>
+                            <a href='https://www.linkedin.com/in/idoko-emmanuel-a3a007203/'><BsLinkedin /></a>
+                            <a href='https://twitter.com/Id__Emmanuel'><BsTwitter /></a>
+                            <a href='mailto:idoko.emmanuel.dev@gmail.com'><BsFillEnvelopeFill /></a>
+                        </div>
                     </div>
 
                     <div id="imgContainer">
