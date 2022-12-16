@@ -1,8 +1,8 @@
 import { useEffect, useLayoutEffect, useState } from 'react';
 import Head from 'next/head';
-import GlobalStyles from '../components/styles/globalStyles';
+import GlobalStyles from '../styles/globalStyles';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../components/styles/theme.js';
+import { theme } from '../styles/theme.js';
 import Layout from '../components/layout/layout';
 import Loader from '../components/loader';
 

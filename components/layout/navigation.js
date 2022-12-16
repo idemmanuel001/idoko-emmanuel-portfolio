@@ -2,8 +2,8 @@ import { useState, useLayoutEffect, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { Link, animateScroll as scroll } from "react-scroll";
 import { IoMenuSharp, IoClose } from 'react-icons/io5';
-import styled, { keyframes } from 'styled-components';
-import { Button } from '../styles/sharedStyles';
+import styled from 'styled-components';
+import { Button } from '../../styles/sharedStyles';
 
 
 

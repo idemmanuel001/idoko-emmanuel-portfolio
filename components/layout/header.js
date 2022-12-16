@@ -5,7 +5,7 @@ import { MobileNav, DestopNav } from './navigation';
 import styled from 'styled-components';
 import Image from 'next/image';
 import NextLink from 'next/link';
-import { Container } from '../styles/sharedStyles';
+import { Container } from '../../styles/sharedStyles';
 
 
 const StyledHeader = styled.div`
