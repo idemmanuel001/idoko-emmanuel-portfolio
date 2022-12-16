@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Container, Section } from '../styles/sharedStyles';
+import { Container, Section } from '../../styles/sharedStyles';
 import Emoji from '../emoji';
 import Skills from '../skills';
 
@@ -82,7 +82,6 @@ const AboutMe = () => {
             <Container>
                 <div className="title">
                     <h2> About <span>Me</span></h2>
-                   {/*  <div className='line'></div> */}
                    <hr />
                 </div>
 

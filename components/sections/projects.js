@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { Container, Section } from '../styles/sharedStyles';
+import { Container, Section } from '../../styles/sharedStyles';
 import { IoMdArrowRoundForward } from 'react-icons/io';
 
 

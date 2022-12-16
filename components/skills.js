@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { TbBrandNextjs } from 'react-icons/tb';
-import { SiTailwindcss, SiReact, SiGraphql, SiStyledcomponents, SiFigma, SiContentful, SiShopify } from 'react-icons/si';
+import { SiTailwindcss, SiReact, SiGraphql, SiStyledcomponents, SiFigma, SiContentful, SiShopify, SiGreensock } from 'react-icons/si';
 
 import {
     IoLogoHtml5,
@@ -72,6 +72,7 @@ const technologies = [
     { title: 'React & Redux', icon: <SiReact /> },
     { title: 'Nextjs', icon: <TbBrandNextjs /> },
     { title: 'Graphql', icon: <SiGraphql /> },
+    { title: 'GSAP', icon: <SiGreensock /> },
     { title: 'Nodejs', icon: <IoLogoNodejs /> },
     { title: 'Git & Github', icon: <IoLogoGithub /> },
     { title: 'Figma', icon: <SiFigma /> },

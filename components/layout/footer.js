@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Emoji from '../emoji';
-import { Container } from '../styles/sharedStyles';
+import { Container } from '../../styles/sharedStyles';
 
 const StyledFooter = styled.footer`
     width: 100%;
