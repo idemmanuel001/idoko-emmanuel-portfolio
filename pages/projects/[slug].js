@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { marked } from 'marked';
 import { IoMdArrowBack } from 'react-icons/io';
 
 
@@ -59,9 +60,18 @@ const StyledProject = styled.div`
           position: absolute;
           top: 0;
           right: 0;
-          background: black;
+          background: ${({ theme }) => theme.secondaryColor};
+          z-index: 10;
+          opacity: 0.2;
          }
       }
+
+    .project-body{
+      h3{
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+      }
+    }
 `;
 
 
@@ -109,9 +119,9 @@ const Project = ({ frontmatter, content }) => {
 
         </div>
 
-        <p>
-          {content}
-        </p>
+        <dv className='project-body'>
+          <div dangerouslySetInnerHTML={{ __html: marked(content) }} ></div>
+        </dv>
       </Container>
     </StyledProject>
   );

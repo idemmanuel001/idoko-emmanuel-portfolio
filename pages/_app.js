@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     setTimeout(() => {
       setPreLoader(false);
-    }, 3000);
+    }, 2000);
   }, [preLoader]);
 
   return (
