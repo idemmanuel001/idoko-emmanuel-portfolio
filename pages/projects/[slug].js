@@ -1,4 +1,4 @@
-import { Container } from '../../components/styles/sharedStyles';
+import { Container } from '../../styles/sharedStyles';
 import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
