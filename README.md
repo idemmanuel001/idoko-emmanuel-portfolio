@@ -1,8 +1,13 @@
 # Portfolio Website of Frontend Developer, Idoko Emmanuel
 
+Built with Netxjs and Styled Components
+
+![Screenshot of live site](.public/../public/images/portfolio-shot.webp)
+
 
 Setup 
-```bash
+
+```**bash**
 
 # Install dependencies
 $ npm install
