@@ -40,6 +40,14 @@ const Button = styled.button`
         color: ${({ borderColor, theme }) => borderColor || theme.lightGray};
      }
 
+     a{  
+        color: ${({ borderColor, theme }) => borderColor || theme.lightGray};
+        
+        &:active {
+            color: ${({ borderColor, theme }) => borderColor || theme.lightGray};
+        }
+    }
+
 `;
 
 

@@ -263,7 +263,6 @@ const ContactMe = () => {
                         >
 
                             <p className='formControl' >
-                                <label htmlFor="name">Your Name</label>
                                 <input
                                     name='name'
                                     type='text'
@@ -272,11 +271,11 @@ const ContactMe = () => {
                                     onBlur={formik.handleBlur}
                                     value={formik.values.name}
                                 />
+                                <label htmlFor="name">Your Name</label>
 
                                 {formik.touched.name && formik.errors.name ? <span className='errorMessage'>{formik.errors.name}</span> : null}
                             </p>
                             <p className='formControl' >
-                                <label htmlFor="email">Your Email</label>
                                 <input
                                     name='email'
                                     type='email'
@@ -285,11 +284,11 @@ const ContactMe = () => {
                                     onBlur={formik.handleBlur}
                                     value={formik.values.email}
                                 />
+                                <label htmlFor="email">Your Email</label>
                                 {formik.touched.email && formik.errors.email ? <span className='errorMessage'>{formik.errors.email}</span> : null}
                             </p>
 
                             <p className='formControl' >
-                                <label htmlFor="subject">Message Subject</label>
                                 <input
                                     name='messageSubject'
                                     type='text'
@@ -298,11 +297,11 @@ const ContactMe = () => {
                                     onBlur={formik.handleBlur}
                                     value={formik.values.messageSubject}
                                 />
+                                <label htmlFor="subject">Message Subject</label>
                                 {formik.touched.messageSubject && formik.errors.messageSubject ? <span className='errorMessage'>{formik.errors.messageSubject}</span> : null}
 
                             </p>
                             <p className='formControl' >
-                                <label htmlFor="name">Message</label>
                                 <textarea
                                     name="message"
                                     id="message"
@@ -312,6 +311,7 @@ const ContactMe = () => {
                                     value={formik.values.message}
                                 >
                                 </textarea>
+                                <label htmlFor="name">Message</label>
                                 {formik.touched.message && formik.errors.message ? <span className='errorMessage'>{formik.errors.message}</span> : null}
 
                             </p>
@@ -329,6 +329,7 @@ const ContactMe = () => {
                     <div className='spaceship-container'>
                         <Image
                             src={spaceship}
+                            priority='true'
                             placeholder='blur'
                             blurDataURL={spaceship}
                             alt='blob'

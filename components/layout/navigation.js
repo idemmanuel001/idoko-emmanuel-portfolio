@@ -19,7 +19,7 @@ const links = [
 //DESSTOP NAV COMPONENT
 
 //Destop Nav Styles
-const StyledDestopNav = styled.ul`
+const StyledDestopNav = styled.div`
     display: none;
    
     .innerContainer{
@@ -96,7 +96,11 @@ const DestopNav = () => {
                     );
                 })}
 
-                <Button>Resume</Button>
+                <Button>
+                    <a href=' '>
+                        Resume
+                    </a>
+                </Button>
             </div>
         </StyledDestopNav>
     );
@@ -134,7 +138,7 @@ const StyledMobileNavWrapper = styled.div`
     }
 `;
 
-const StyledMobileNav = styled.ul`
+const StyledMobileNav = styled.div`
     z-index: 999;
     position: absolute;
     right: 0;
@@ -226,7 +230,11 @@ const MobileNav = () => {
 
 
                 })}
-                <Button>Resume</Button>
+                <Button>
+                    <a href=' '>
+                        Resume
+                    </a>
+                </Button>
             </StyledMobileNav>)
         </StyledMobileNavWrapper>
     );

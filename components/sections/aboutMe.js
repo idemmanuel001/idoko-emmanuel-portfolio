@@ -4,8 +4,6 @@ import Emoji from '../emoji';
 import Skills from '../skills';
 
 
-
-
 const StyledAbout = styled(Section)`
     background: ${({ theme }) => theme.white};
     color: ${({ theme }) => theme.secondaryColor};
@@ -77,12 +75,13 @@ const StyledAbout = styled(Section)`
 `;
 
 const AboutMe = () => {
+
     return (
         <StyledAbout id='about' >
             <Container>
                 <div className="title">
                     <h2> About <span>Me</span></h2>
-                   <hr />
+                    <hr />
                 </div>
 
                 <div className="about-me">
@@ -92,7 +91,7 @@ const AboutMe = () => {
                             Hello! <Emoji symbol={'👋'} arial-label='waving hand' />
                         </h3>
                         <p>
-                            I am Emmanuel, a frontend developer living on the blue planet <Emoji symbol={'🌍'} arial-label='earth' />.  My curiosity for knowledge led me into the tech sector, and learning has been amazing. 
+                            I am Emmanuel, a frontend developer living on the blue planet <Emoji symbol={'🌍'} arial-label='earth' />.  My curiosity for knowledge led me into the tech sector, and learning has been amazing.
                             I pay attention to user needs and use my knowledge to produce user-friendly websites.
                         </p>
 
