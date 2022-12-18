@@ -1,4 +1,5 @@
 ---
+sn: 1
 title: 'comfy-homes'
 stack: ['react', 'nextjs', 'tailwindcss', 'axios', 'google map api', 'rapidapi rest api']
 description: 'This is a real estate website built using nextjs and styled using tailwindcss.'
@@ -17,8 +18,8 @@ Building a simple real estate website showing listings of properties for rent an
 
 ### general requirements
 
-The requirements i had in mind was the website must be fast and responsive.
-I am to pull in the listing data from rapidapi (rest api) using the axiios library.
+The requirements I had in mind were the website must be fast and responsive.
+I am to pull in the listing data from RapidAPI (rest api) using the Axios library.
 
 
 ### stack explanation
