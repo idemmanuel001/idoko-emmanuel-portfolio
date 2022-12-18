@@ -9,6 +9,8 @@ import matter from 'gray-matter';
 
 
 export default function Home({ projects }) {
+  console.log(projects)
+
 
   return (
     <>
@@ -47,9 +49,14 @@ export async function getStaticProps() {
     };
   });
 
+
   return {
     props: {
-      projects
+      projects: projects.sort((a, b)=> {
+
+        //sorting the projects according to the sn
+        return b.frontmatter.sn - a.frontmatter.sn
+      })
     },
   };
 }
