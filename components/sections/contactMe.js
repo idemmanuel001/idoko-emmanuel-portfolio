@@ -262,7 +262,7 @@ const ContactMe = () => {
                             onSubmit={formik.handleSubmit}
                         >
 
-                            <p className='formControl' >
+                            <p className='form-control' >
                                 <input
                                     name='name'
                                     type='text'
@@ -275,7 +275,7 @@ const ContactMe = () => {
 
                                 {formik.touched.name && formik.errors.name ? <span className='errorMessage'>{formik.errors.name}</span> : null}
                             </p>
-                            <p className='formControl' >
+                            <p className='form-control' >
                                 <input
                                     name='email'
                                     type='email'
@@ -288,7 +288,7 @@ const ContactMe = () => {
                                 {formik.touched.email && formik.errors.email ? <span className='errorMessage'>{formik.errors.email}</span> : null}
                             </p>
 
-                            <p className='formControl' >
+                            <p className='form-control' >
                                 <input
                                     name='messageSubject'
                                     type='text'
@@ -301,7 +301,7 @@ const ContactMe = () => {
                                 {formik.touched.messageSubject && formik.errors.messageSubject ? <span className='errorMessage'>{formik.errors.messageSubject}</span> : null}
 
                             </p>
-                            <p className='formControl' >
+                            <p className='form-control' >
                                 <textarea
                                     name="message"
                                     id="message"
@@ -315,10 +315,9 @@ const ContactMe = () => {
                                 {formik.touched.message && formik.errors.message ? <span className='errorMessage'>{formik.errors.message}</span> : null}
 
                             </p>
-                            <p className="formControl"  >
+                            <p className="form-control"  >
                                 <Button name='submit'
                                     type="submit"
-                                    color={({ theme }) => theme.secondaryColor}
                                     borderColor={({ theme }) => theme.secondaryColor}
                                 >Submit</Button>
                             </p>

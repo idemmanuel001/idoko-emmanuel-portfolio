@@ -28,7 +28,7 @@ const Button = styled.button`
     padding: 0.5rem;
     transition: all 0.3s ease-in;
     background: ${({ bg }) => bg || 'transparent'};
-    color: ${({ color, theme }) => color || theme.primaryColor};
+    color: ${({ color, theme }) => color || theme.secondaryColor};
     outline: none;
     border: 1px solid ${({ borderColor, theme }) => borderColor || theme.primaryColor};
    

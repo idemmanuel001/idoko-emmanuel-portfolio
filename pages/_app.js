@@ -5,13 +5,13 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from '../styles/theme.js';
 import Layout from '../components/layout/layout';
 import Loader from '../components/loader';
+import GoogleTag from '../components/googleTag';
 
 
 
 
 
 function MyApp({ Component, pageProps }) {
-
   // suppress useLayoutEffect warnings when running outside a browser
   if (!process.browser) useLayoutEffect = useEffect;
 
@@ -26,10 +26,11 @@ function MyApp({ Component, pageProps }) {
   return (
     preLoader ? <Loader /> : (
       <>
+        <GoogleTag />
         <Head>
           <title>Frontend Developer - Idoko Emmanuel</title>
-          <meta name="description" content="idoko emmanuel frontend developer portfolio website" />
-          <link rel="icon" href="/images/favicon.ico" />
+          <meta name='description' content='idoko emmanuel frontend developer portfolio website' />
+          <link rel='icon' href='/images/favicon.ico' />
         </Head>
 
         <ThemeProvider theme={theme}>

@@ -9,8 +9,6 @@ import matter from 'gray-matter';
 
 
 export default function Home({ projects }) {
-  console.log(projects)
-
 
   return (
     <>

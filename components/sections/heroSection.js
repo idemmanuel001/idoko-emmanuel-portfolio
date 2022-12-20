@@ -177,7 +177,7 @@ const Herosection = () => {
 
                         <div className="socials">
                             <a href='https://github.com/idemmanuel001' target='_blank' rel='noreferrer noopener'><BsGithub /></a>
-                            <a href='https://www.linkedin.com/in/idoko-emmanuel-a3a007203/' target='_blank' rel='noreferrer noopener'><BsLinkedin /></a>
+                            <a href='https://www.linkedin.com/in/idoko-emmanuel' target='_blank' rel='noreferrer noopener'><BsLinkedin /></a>
                             <a href='https://twitter.com/Id__Emmanuel' target='_blank' rel='noreferrer noopener'><BsTwitter /></a>
                             <a href='mailto:idoko.emmanuel.dev@gmail.com' target='_blank' rel='noreferrer noopener'><BsFillEnvelopeFill /></a>
                         </div>
