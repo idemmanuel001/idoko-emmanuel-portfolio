@@ -97,7 +97,7 @@ const DestopNav = () => {
                 })}
 
                 <Button>
-                    <a href=' '>
+                    <a href='/idoko-emmanuel-resume.pdf' target='_blank' rel='noreferrer noopener'>
                         Resume
                     </a>
                 </Button>
@@ -231,7 +231,7 @@ const MobileNav = () => {
 
                 })}
                 <Button>
-                    <a href=' '>
+                    <a href='/idoko-emmanuel-resume.pdf' target='_blank' rel='noreferrer noopener'>
                         Resume
                     </a>
                 </Button>

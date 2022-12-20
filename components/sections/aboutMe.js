@@ -12,10 +12,6 @@ const StyledAbout = styled(Section)`
         display: flex;
         flex-direction: column;
         align-items: top;
-
-        @media(min-width: ${({ theme }) => theme.desktop}){
-          
-        }
     }
 
     .background{
@@ -66,7 +62,7 @@ const StyledAbout = styled(Section)`
 
             @media(min-width: ${({ theme }) => theme.desktop}){
                      bottom: 0;
-                }
+            }
 
         }
     }
