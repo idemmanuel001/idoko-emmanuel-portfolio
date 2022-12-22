@@ -183,6 +183,12 @@ const StyledMobileNav = styled.div`
         margin-top: 2rem;
         margin-bottom: 1rem;
         width: 100%;
+        display: flex;
+
+        a{
+            width: 100%;
+            height: 100%;
+        }
     }
 `;
 
